@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>40 Years of Vietnam Doi Moi Digital Brochure</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#FF6B35",
+                        "primary-dark": "#E63946",
+                        "accent-red": "#E63946",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#171512",
+                        "surface-dark": "#22282a",
+                        "surface-card": "#2F373A",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "sans": ["Manrope", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .snake-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(255,107,53,0) 0%, #FF6B35 5%, #FF6B35 95%, rgba(255,107,53,0) 100%);
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        .timeline-node {
+            box-shadow: 0 0 0 4px #171512;
+            transition: all 0.3s ease;
+        }
+        .timeline-node:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 0 4px #171512, 0 0 15px rgba(255,107,53,0.5);
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #171512;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #37332a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF6B35;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-white font-sans antialiased overflow-x-hidden">
+<!-- Sticky Nav Rail (Desktop) -->
+<div class="fixed left-0 top-0 h-full w-20 hidden lg:flex flex-col items-center justify-center border-r border-[#37332a] bg-[#171512]/95 backdrop-blur z-50">
+<div class="flex flex-col gap-10 items-center">
+<!-- Dots representing eras -->
+<a class="group flex items-center justify-center" href="#hero" title="Start">
+<div class="w-2 h-2 rounded-full bg-white/20 group-hover:bg-primary transition-colors duration-300"></div>
+</a>
+<a class="group flex items-center justify-center" href="#era-1986" title="1986">
+<span class="absolute left-10 opacity-0 group-hover:opacity-100 transition-opacity text-primary text-xs font-bold">1986</span>
+<div class="w-2 h-2 rounded-full bg-white/20 group-hover:bg-primary transition-colors duration-300"></div>
+</a>
+<a class="group flex items-center justify-center" href="#era-1995" title="1995">
+<span class="absolute left-10 opacity-0 group-hover:opacity-100 transition-opacity text-primary text-xs font-bold">1995</span>
+<div class="w-2 h-2 rounded-full bg-white/20 group-hover:bg-primary transition-colors duration-300"></div>
+</a>
+<a class="group flex items-center justify-center" href="#era-2007" title="2007">
+<span class="absolute left-10 opacity-0 group-hover:opacity-100 transition-opacity text-primary text-xs font-bold">2007</span>
+<div class="w-2 h-2 rounded-full bg-white/20 group-hover:bg-primary transition-colors duration-300"></div>
+</a>
+<a class="group flex items-center justify-center" href="#era-2026" title="Future">
+<span class="absolute left-10 opacity-0 group-hover:opacity-100 transition-opacity text-primary text-xs font-bold">2026</span>
+<div class="w-2 h-2 rounded-full bg-white/20 group-hover:bg-primary transition-colors duration-300"></div>
+</a>
+</div>
+</div>
+<!-- Main Content Wrapper -->
+<div class="relative flex flex-col w-full min-h-screen lg:pl-20">
+<!-- Header -->
+<header class="absolute top-0 w-full z-40 border-b border-white/10 bg-gradient-to-b from-black/80 to-transparent">
+<div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">star</span>
+<div class="flex flex-col">
+<span class="font-display font-bold text-lg leading-tight tracking-wide text-white">VIỆT NAM</span>
+<span class="text-[10px] text-primary font-bold tracking-[0.2em] uppercase">40 Years of Renovation</span>
+</div>
+</div>
+<button class="hidden md:flex bg-primary/10 border border-primary text-primary hover:bg-primary hover:text-[#171512] px-6 py-2 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300">
+                    Share Brochure
+                </button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden" id="hero">
+<!-- Background Image with Overlay -->
+<div class="fixed inset-0 z-0">
+<div class="absolute inset-0 bg-[#171512]/40 mix-blend-multiply z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#171512]/60 via-transparent to-transparent z-10"></div>
+<!-- Using a specific Vietnam landscape placeholder -->
+<video autoplay loop muted playsinline class="w-screen h-screen object-cover object-center" src="media_src/home_bg_1.mp4"></video>
+</div>
+<div class="relative z-20 text-center max-w-5xl px-6 flex flex-col items-center gap-8 mt-20">
+<div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-primary/30 bg-black/40 backdrop-blur-md mb-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-primary text-xs font-bold tracking-[0.2em] uppercase">Interactive Timeline</span>
+</div>
+<h1 class="font-display font-bold text-5xl md:text-7xl lg:text-8xl leading-none text-white drop-shadow-2xl">
+                    Hành Trình <br/><span class="text-primary italic">Đổi Mới</span>
+</h1>
+<div class="h-px w-24 bg-primary/50 my-2"></div>
+<p class="font-display text-lg md:text-2xl text-gray-200 max-w-2xl font-light italic opacity-90 leading-relaxed">
+                    "From subsidy to integration — A 40-year voyage of national resilience and socialist aspiration."
+                </p>
+<div class="mt-12 flex flex-col items-center gap-3 animate-bounce">
+<span class="text-[10px] text-primary/80 uppercase tracking-[0.3em]">Explore History</span>
+<span class="material-symbols-outlined text-primary text-2xl">arrow_downward</span>
+</div>
+</div>
+</section>
+<!-- Timeline Container -->
+<div class="relative w-full max-w-5xl mx-auto px-4 py-24">
+<!-- Central Golden Snake Line -->
+<div class="hidden md:block snake-line"></div>
+<div class="flex flex-col gap-16 md:gap-24">
+<!-- Era: 1986 (Major) -->
+<div class="relative md:grid md:grid-cols-2 md:items-center md:gap-12 group" id="era-1986">
+<div class="hidden md:flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10 items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-[#171512] border-2 border-primary flex items-center justify-center timeline-node z-10">
+<span class="material-symbols-outlined text-primary text-2xl">agriculture</span>
+</div>
+</div>
+<!-- Left Content (Text) -->
+<div class="flex flex-col items-end text-right gap-3 order-1 md:pr-12">
+<span class="text-primary font-bold text-5xl font-display">1986</span>
+<div class="bg-surface-card p-6 rounded-xl border-l-4 border-primary shadow-xl">
+<div class="flex items-center justify-end gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-sm">receipt_long</span>
+<span class="uppercase tracking-widest text-xs font-bold">The Great Shift</span>
+</div>
+<h3 class="text-2xl font-display font-bold text-white mb-2">Renovation (Đổi Mới)</h3>
+<p class="text-gray-400 text-sm leading-relaxed">
+                                Abandoning the centralized subsidy mechanism. The era of ration stamps gives way to the first seeds of a socialist-oriented market economy.
+                            </p>
+</div>
+</div>
+<!-- Right Content (Image) -->
+<div class="order-2 mt-4 md:mt-0 md:pl-12">
+<div class="relative aspect-video rounded-lg overflow-hidden border border-white/10 group-hover:border-primary/50 transition-colors">
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay z-10"></div>
+<img alt="Old black and white photo of a busy Vietnamese market street" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Old black and white photo of a busy Vietnamese market street" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAj3Td5LMVFSTf-nYYkNsoI_Egt96tOpwDoQWYZKwaP8InS3EEMkFjo57ddlH3avairXwgPqdAIqnykn3ZYo_AiqWQhF8T08sTcrKAEJlxTWIcmRDnG1tksPFgUvpDHwGis_84gwUBpwn985n5ReII8-gDzhr_i0rg6-UwuDfffXDF5_JZJdX0YrxuRdZ4eczLkMssu-c8FjN7jIaQyX0ne91rHimkZzq8ypDq__odOaU8nsBz8VFfKqjcOXnr8-8tYFCofUq_XX8"/>
+</div>
+</div>
+</div>
+<!-- Minor Era: 1991 -->
+<div class="relative md:flex justify-center items-center group">
+<div class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center z-10">
+<div class="w-4 h-4 rounded-full bg-primary timeline-node"></div>
+</div>
+<div class="md:w-1/2 md:pr-12 md:text-right flex flex-col items-end">
+<span class="text-white/60 font-bold text-xl font-display">1991</span>
+<h4 class="text-primary font-bold">Political Stability</h4>
+<p class="text-xs text-gray-500 max-w-xs mt-1">"Dan giau, nuoc manh" - Rich people, strong country. Building the foundation.</p>
+</div>
+<div class="md:w-1/2 md:pl-12 flex items-center text-white/30 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">settings</span>
+</div>
+</div>
+<!-- Era: 1995 (Major) -->
+<div class="relative md:grid md:grid-cols-2 md:items-center md:gap-12 group" id="era-1995">
+<div class="hidden md:flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10 items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-[#171512] border-2 border-primary flex items-center justify-center timeline-node z-10">
+<span class="material-symbols-outlined text-primary text-2xl">public</span>
+</div>
+</div>
+<!-- Left Content (Image) -->
+<div class="order-2 md:order-1 mt-4 md:mt-0 md:pr-12">
+<div class="relative aspect-video rounded-lg overflow-hidden border border-white/10 group-hover:border-primary/50 transition-colors">
+<img alt="Abstract handshake background symbolizing agreement" class="w-full h-full object-cover" data-alt="Abstract handshake background symbolizing agreement" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWe_VUc3qoO9yYoI74BCUzPKtp_By3d6pxiJGZs5p0Km8a-4N-SD2ROwEU984U9_lGpGiWD7Jf7fwdbWiFyTw9zOeXgBw2VUwOeKIZdwEyCQAxYzjXukCsHDfVmX3SSj24BrcJlCGK3RgjJ-52XZ5E2BX1KMIdt1zoBVqiPGK7lL5LDDwb57kdbJnboAVIKV1Dm9EfGM9soHr371o8G0bbdBaSP3jRM1z9yFhxLIW1wM94UJFJVaGuAblvBNGhHUAAbP_cc4BiX4c"/>
+</div>
+</div>
+<!-- Right Content (Text) -->
+<div class="flex flex-col items-start text-left gap-3 order-1 md:order-2 md:pl-12">
+<span class="text-primary font-bold text-5xl font-display">1995</span>
+<div class="bg-surface-card p-6 rounded-xl border-r-4 border-primary shadow-xl">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-sm">handshake</span>
+<span class="uppercase tracking-widest text-xs font-bold">Integration</span>
+</div>
+<h3 class="text-2xl font-display font-bold text-white mb-2">ASEAN &amp; Normalization</h3>
+<p class="text-gray-400 text-sm leading-relaxed">
+                                A historic handshake across the ocean. Vietnam joins ASEAN and normalizes relations with the US, opening doors to the world.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Minor Era: 1996 & 2001 -->
+<div class="relative md:flex justify-center items-center group gap-8">
+<!-- 1996 Left -->
+<div class="md:w-1/2 md:pr-12 flex flex-row items-center justify-end gap-4">
+<div class="text-right">
+<span class="text-white/60 font-bold text-xl font-display">1996</span>
+<h4 class="text-primary font-bold">Industrialization</h4>
+</div>
+<span class="material-symbols-outlined text-3xl text-white/30">factory</span>
+</div>
+<!-- Center Dots -->
+<div class="hidden md:flex flex-col gap-8 absolute left-1/2 -translate-x-1/2 z-10">
+<div class="w-3 h-3 rounded-full bg-white/20"></div>
+<div class="w-3 h-3 rounded-full bg-white/20"></div>
+</div>
+<!-- 2001 Right -->
+<div class="md:w-1/2 md:pl-12 flex flex-row items-center justify-start gap-4">
+<span class="material-symbols-outlined text-3xl text-white/30">trending_up</span>
+<div class="text-left">
+<span class="text-white/60 font-bold text-xl font-display">2001</span>
+<h4 class="text-primary font-bold">Economic Diversity</h4>
+</div>
+</div>
+</div>
+<!-- Era: 2007 (Major) -->
+<div class="relative md:grid md:grid-cols-2 md:items-center md:gap-12 group" id="era-2007">
+<div class="hidden md:flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10 items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-[#171512] border-2 border-primary flex items-center justify-center timeline-node z-10">
+<span class="material-symbols-outlined text-primary text-2xl">local_shipping</span>
+</div>
+</div>
+<!-- Left Content (Text) -->
+<div class="flex flex-col items-end text-right gap-3 order-1 md:pr-12">
+<span class="text-primary font-bold text-5xl font-display">2007</span>
+<div class="bg-surface-card p-6 rounded-xl border-l-4 border-primary shadow-xl">
+<div class="flex items-center justify-end gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-sm">language</span>
+<span class="uppercase tracking-widest text-xs font-bold">WTO Accession</span>
+</div>
+<h3 class="text-2xl font-display font-bold text-white mb-2">Global Trade</h3>
+<p class="text-gray-400 text-sm leading-relaxed">
+                                Official member of the World Trade Organization. Shipping containers fill the ports, marking rapid export growth.
+                            </p>
+</div>
+</div>
+<!-- Right Content (Image) -->
+<div class="order-2 mt-4 md:mt-0 md:pl-12">
+<div class="relative aspect-video rounded-lg overflow-hidden border border-white/10 group-hover:border-primary/50 transition-colors">
+<img alt="Aerial view of a busy shipping container port" class="w-full h-full object-cover" data-alt="Aerial view of a busy shipping container port" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKyh10N1V7jNz-pOg5aq93YGymWgZvWZ_eKBbvWnl_14ZOBHetc5I_eQOKSa1HZ0-0Qse3SJNZblXAf7rZXek3p2hc15o8atLXzt2HgsYq75fGcwhXAavagLYhNjPwMqwheS3HE7FoODtPJxi5Gs3ML1AgRlrpeNiddM-9Z3j86Fm8DD7Go-dFiYuAYvFZaAjMzN30GiU6ol6Ffh3PFKBxIY95KwnrgrsBF25tGq-WxVDsQZ8K9k0bi-XZNb0bvGUonZtz6Ownsks"/>
+</div>
+</div>
+</div>
+<!-- Minor Era: 2011 & 2013 -->
+<div class="relative md:flex justify-center items-center group gap-8">
+<!-- 2011 Left -->
+<div class="md:w-1/2 md:pr-12 flex flex-row items-center justify-end gap-4">
+<div class="text-right">
+<span class="text-white/60 font-bold text-xl font-display">2011</span>
+<h4 class="text-primary font-bold">Human Development</h4>
+</div>
+<span class="material-symbols-outlined text-3xl text-white/30">groups</span>
+</div>
+<!-- Center Dots -->
+<div class="hidden md:flex flex-col gap-8 absolute left-1/2 -translate-x-1/2 z-10">
+<div class="w-3 h-3 rounded-full bg-white/20"></div>
+<div class="w-3 h-3 rounded-full bg-white/20"></div>
+</div>
+<!-- 2013 Right -->
+<div class="md:w-1/2 md:pl-12 flex flex-row items-center justify-start gap-4">
+<span class="material-symbols-outlined text-3xl text-white/30">gavel</span>
+<div class="text-left">
+<span class="text-white/60 font-bold text-xl font-display">2013</span>
+<h4 class="text-primary font-bold">Constitution</h4>
+</div>
+</div>
+</div>
+<!-- Era: 2016 (Special Accent) -->
+<div class="relative md:grid md:grid-cols-2 md:items-center md:gap-12 group">
+<div class="hidden md:flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10 items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-[#171512] border-2 border-accent-red flex items-center justify-center timeline-node shadow-[0_0_20px_rgba(168,47,65,0.3)] z-10">
+<span class="material-symbols-outlined text-accent-red text-2xl">shield</span>
+</div>
+</div>
+<!-- Left Content (Image) -->
+<div class="order-2 md:order-1 mt-4 md:mt-0 md:pr-12">
+<div class="relative aspect-video rounded-lg overflow-hidden border border-white/10 group-hover:border-accent-red/50 transition-colors">
+<div class="absolute inset-0 bg-accent-red/10 z-10"></div>
+<img alt="Abstract texture of a shield or metallic protection" class="w-full h-full object-cover" data-alt="Abstract texture of a shield or metallic protection" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyav9cdK89rK7GvZuvET2v--qucUB3iX3fBTGuaimzjXLb_UFnjqnwe9uk_pFAOYvGnD0zNWbgZczt21fppzHfB94I4HaJshJJVxWusvdHT0qZ-pQ54XTUmFe5fGBvdMg5v7KFar44ku9hsZjQhp65XjI3bUet4Q6TRByxfJfOBVA4n3j1ThAA4Yh-qi6hn-728gwL3T9WjZ409O2SI82aYVth6hROYoYaWi4Nqeu_qbVZn2zknnL9sAYI5Dj771Df_cY9T1KJBXc"/>
+</div>
+</div>
+<!-- Right Content (Text) -->
+<div class="flex flex-col items-start text-left gap-3 order-1 md:order-2 md:pl-12">
+<span class="text-accent-red font-bold text-5xl font-display">2016</span>
+<div class="bg-surface-card p-6 rounded-xl border-r-4 border-accent-red shadow-xl">
+<div class="flex items-center gap-2 mb-2 text-accent-red">
+<span class="material-symbols-outlined text-sm">account_balance</span>
+<span class="uppercase tracking-widest text-xs font-bold">Party Building</span>
+</div>
+<h3 class="text-2xl font-display font-bold text-white mb-2">Anti-Corruption</h3>
+<p class="text-gray-400 text-sm leading-relaxed">
+                                The "burning furnace" campaign. A sword for justice and a shield for integrity, purifying the political system.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Minor Era: 2021 -->
+<div class="relative md:flex justify-center items-center group">
+<div class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center z-10">
+<div class="w-4 h-4 rounded-full bg-primary timeline-node"></div>
+</div>
+<div class="md:w-1/2 md:pr-12 md:text-right flex flex-col items-end">
+<span class="text-white/60 font-bold text-xl font-display">2021</span>
+<h4 class="text-primary font-bold">National Fortune</h4>
+<p class="text-xs text-gray-500 max-w-xs mt-1">Resilience through the pandemic. The Golden S-shape shines.</p>
+</div>
+<div class="md:w-1/2 md:pl-12 flex items-center text-white/30 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">hotel_class</span>
+</div>
+</div>
+<!-- Era: 2024-2026 (Future Vision Centerpiece) -->
+<div class="relative flex flex-col items-center justify-center pt-12" id="era-2026">
+<!-- Ending Node -->
+<div class="w-20 h-20 rounded-full bg-[#171512] border-4 border-primary flex items-center justify-center mb-8 shadow-[0_0_50px_rgba(255,107,53,0.5)] z-10">
+<span class="material-symbols-outlined text-primary text-4xl">rocket_launch</span>
+</div>
+<div class="w-full bg-gradient-to-br from-surface-card to-[#171512] p-1 rounded-2xl shadow-2xl border border-primary/20 hover:border-primary/40 transition-colors">
+<div class="bg-[#171512]/50 backdrop-blur-sm rounded-xl p-8 md:p-12 relative overflow-hidden">
+<!-- Decorative Background -->
+<div class="absolute -right-20 -top-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute -left-20 -bottom-20 w-96 h-96 bg-accent-red/5 rounded-full blur-3xl"></div>
+<div class="relative z-10 flex flex-col lg:flex-row gap-10 items-center">
+<div class="lg:w-1/2 flex flex-col gap-6 text-center lg:text-left">
+<div class="inline-block mx-auto lg:mx-0 px-3 py-1 rounded bg-primary text-[#171512] text-xs font-bold uppercase tracking-wider w-fit">
+                                         Vision 2045
+                                     </div>
+<h2 class="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
+                                         Vững bước dưới <br/><span class="text-primary">Cờ Đảng</span>
+</h2>
+<p class="text-lg text-gray-300 font-light leading-relaxed">
+                                         Towards the 14th National Congress. Consolidating 40 years of historic achievements to propel Vietnam into a high-income, developed nation.
+                                     </p>
+<div class="grid grid-cols-2 gap-4 mt-4">
+<div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
+<span class="material-symbols-outlined text-primary">trending_up</span>
+<div class="text-left">
+<div class="text-sm font-bold text-white">High Growth</div>
+<div class="text-[10px] text-gray-400">Sustainable Economy</div>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
+<span class="material-symbols-outlined text-primary">laptop_chromebook</span>
+<div class="text-left">
+<div class="text-sm font-bold text-white">Digital Nation</div>
+<div class="text-[10px] text-gray-400">Innovation Hub</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 w-full h-full min-h-[300px] relative rounded-xl overflow-hidden border border-white/10 shadow-2xl group cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-t from-[#171512] via-transparent to-transparent z-10"></div>
+<img alt="Modern futuristic skyline of Ho Chi Minh City at night with light trails" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000" data-alt="Modern futuristic skyline of Ho Chi Minh City at night with light trails" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa0eSQDLe3_CUL4TYDAm_EmB-Ech3r0SFos2oR_8NCVN4h8NWed4IA_HDSSU1jYKzg-Ggl0ewjLALOodXShqoZ8amHZpWRSeoQTkaPZQbDKBZZreDirHHCbY0DxdshwKqXbEwl8tvTGR-TBbAkHqBzZvXQp0vaMFvR-CBDOAKnhNigHvc_8xKqkdhHbTBcSwXeBRYLr6leRw4OW0TFB0yNnVt-pYO3Q9FohdTY4huadHnf0k3XHgudd0IAGcXq9bo3PvbZQd01rLE"/>
+<div class="absolute bottom-6 left-6 z-20">
+<p class="text-primary text-xs font-bold uppercase tracking-widest mb-1">Destination</p>
+<p class="text-white font-display font-bold text-2xl">Socialist Modernity</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-[#0f0e0c] py-24 mt-12 border-t border-white/5 relative overflow-hidden">
+<!-- Background Texture -->
+<div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#FF6B35 1px, transparent 1px); background-size: 30px 30px;"></div>
+<div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+<span class="material-symbols-outlined text-primary text-5xl mb-8 opacity-50">format_quote</span>
+<blockquote class="font-display text-2xl md:text-4xl text-white leading-relaxed italic mb-10">
+                    "Vì lợi ích mười năm thì phải trồng cây,<br/> vì lợi ích trăm năm thì phải trồng người."
+                </blockquote>
+<div class="flex flex-col items-center gap-3">
+<p class="text-primary font-bold tracking-[0.2em] uppercase text-sm">Hồ Chí Minh</p>
+<div class="w-16 h-0.5 bg-primary/50 rounded-full"></div>
+</div>
+<div class="mt-20 flex flex-wrap justify-center gap-8 text-xs text-gray-500 font-sans tracking-wide uppercase">
+<a class="hover:text-primary transition-colors" href="#">Download Full Report</a>
+<a class="hover:text-primary transition-colors" href="#">Gallery</a>
+<a class="hover:text-primary transition-colors" href="#">Press Kit</a>
+</div>
+<p class="mt-8 text-[10px] text-gray-700">© 2024 Vietnam Renovation Digital Exhibit. Designed for Education.</p>
+</div>
+</footer>
+</div>
+</body></html>
