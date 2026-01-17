@@ -149,7 +149,7 @@
             justify-content: flex-end;
             z-index: 10;
         }
-        /* Ducks container - stationary */
+        /* Ducks container */
         .ducks-container {
             display: flex;
             flex-direction: column;
@@ -181,22 +181,22 @@
             animation: duck-slide-in 0.8s ease forwards;
         }
         .duck-wrapper:nth-child(1).move {
-            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 6s ease-in-out forwards;
-        }
-        .duck-wrapper:nth-child(2).move {
             animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 7s ease-in-out forwards;
         }
+        .duck-wrapper:nth-child(2).move {
+            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 7.5s ease-in-out forwards;
+        }
         .duck-wrapper:nth-child(3).move {
-            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 9s ease-in-out forwards;
+            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 8s ease-in-out forwards;
         }
         .duck-wrapper:nth-child(4).move {
-            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 10s ease-in-out forwards;
+            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 8.5s ease-in-out forwards;
         }
         .duck-wrapper:nth-child(5).move {
-            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 9.5s ease-in-out forwards;
+            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 9s ease-in-out forwards;
         }
         .duck-wrapper:nth-child(6).move {
-            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 8s ease-in-out forwards;
+            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 9.5s ease-in-out forwards;
         }
         @keyframes duck-slide-in {
             to {
@@ -212,7 +212,6 @@
         .duck-wrapper:hover {
             transform: scale(1.15) !important;
         }
-        /* Year bubbles - stationary */
         .year-bubble {
             display: none;
         }
@@ -341,7 +340,7 @@
         <div class="ducks-container">
             <!-- Duck 1 -->
             <div class="duck-wrapper">
-                <div class="year-bubble">2021</div>
+                <div class="year-bubble">2011</div>
                 <div class="duck-image-container">
                     <img src="../media/duck.png" alt="Duck 1" class="duck-image">
                     <div class="duck-number">1</div>
@@ -350,7 +349,7 @@
 
             <!-- Duck 2 -->
             <div class="duck-wrapper">
-                <div class="year-bubble">2020</div>
+                <div class="year-bubble">2012</div>
                 <div class="duck-image-container">
                     <img src="../media/duck.png" alt="Duck 2" class="duck-image">
                     <div class="duck-number">2</div>
@@ -359,7 +358,7 @@
 
             <!-- Duck 3 -->
             <div class="duck-wrapper">
-                <div class="year-bubble">2018</div>
+                <div class="year-bubble">2010</div>
                 <div class="duck-image-container">
                     <img src="../media/duck.png" alt="Duck 3" class="duck-image">
                     <div class="duck-number">3</div>
@@ -368,7 +367,7 @@
 
             <!-- Duck 4 -->
             <div class="duck-wrapper">
-                <div class="year-bubble">2017</div>
+                <div class="year-bubble">2013</div>
                 <div class="duck-image-container">
                     <img src="../media/duck.png" alt="Duck 4" class="duck-image">
                     <div class="duck-number">4</div>
@@ -377,7 +376,7 @@
 
             <!-- Duck 5 -->
             <div class="duck-wrapper">
-                <div class="year-bubble">2019</div>
+                <div class="year-bubble">2009</div>
                 <div class="duck-image-container">
                     <img src="../media/duck.png" alt="Duck 5" class="duck-image">
                     <div class="duck-number">5</div>
@@ -386,7 +385,7 @@
 
             <!-- Duck 6 -->
             <div class="duck-wrapper">
-                <div class="year-bubble">2022</div>
+                <div class="year-bubble">2014</div>
                 <div class="duck-image-container">
                     <img src="../media/duck.png" alt="Duck 6" class="duck-image">
                     <div class="duck-number">6</div>
@@ -404,14 +403,14 @@
     </div>
 
     <script>
-        // Year data with durations - 2021 (correct answer) has shortest duration
-        const yearData = [
-            { number: 1, year: '2021', duration: 6000 },  // Correct answer - fastest
-            { number: 2, year: '2020', duration: 7000 },
-            { number: 3, year: '2018', duration: 9000 },
-            { number: 4, year: '2017', duration: 10000 },
-            { number: 5, year: '2019', duration: 9500 },
-            { number: 6, year: '2022', duration: 8000 }
+        // Duck data - 2011 (correct answer) has shortest duration
+        const duckData = [
+            { number: 1, year: '2011', duration: 7000 },  // Correct answer - fastest
+            { number: 2, year: '2012', duration: 7500 },
+            { number: 3, year: '2010', duration: 8000 },
+            { number: 4, year: '2013', duration: 8500 },
+            { number: 5, year: '2009', duration: 9000 },
+            { number: 6, year: '2014', duration: 9500 }
         ];
 
         let raceStarted = false;
@@ -442,7 +441,7 @@
                                         setTimeout(showCountdown, 100);
                                     }, 900);
                                 } else {
-                                    // Start duck movement after countdown
+                                    // Start horizontal movement after countdown
                                     ducks.forEach(d => {
                                         d.classList.remove('show');
                                         d.classList.add('move');
@@ -464,11 +463,11 @@
         function detectWinner() {
             if (winnerDetected) return;
             
-            // Find the year with shortest duration
-            let fastestYear = yearData[0];
-            yearData.forEach(yearItem => {
-                if (yearItem.duration < fastestYear.duration) {
-                    fastestYear = yearItem;
+            // Find the duck with shortest duration
+            let fastestDuck = duckData[0];
+            duckData.forEach(duck => {
+                if (duck.duration < fastestDuck.duration) {
+                    fastestDuck = duck;
                 }
             });
             
@@ -476,9 +475,9 @@
             setTimeout(() => {
                 if (!winnerDetected) {
                     winnerDetected = true;
-                    window.location.href = `end.html?winner=${fastestYear.number}&year=${fastestYear.year}`;
+                    window.location.href = `end.html?winner=${fastestDuck.number}&year=${fastestDuck.year}`;
                 }
-            }, fastestYear.duration + 800);
+            }, fastestDuck.duration + 800);
         }
     </script>
 

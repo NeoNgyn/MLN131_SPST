@@ -378,12 +378,12 @@
 
         <!-- Question Panel -->
         <div class="question-panel">
-            <p class="question-text" id="questionText">Đại hội Đảng lần thứ XIII diễn ra vào năm nào?</p>
+            <p class="question-text" id="questionText">Nghị quyết Trung ương 4 (khóa XI) diễn ra vào năm nào?</p>
         </div>
 
         <!-- Winner Duck -->
         <div class="winner-duck-container">
-            <div class="year-bubble" id="winnerYear">2021</div>
+            <div class="year-bubble" id="winnerYear">2011</div>
             <div class="duck-image-container">
                 <img src="../media/duck.png" alt="Winner Duck" class="duck-image">
                 <div class="duck-number" id="winnerNumber">1</div>
@@ -401,15 +401,15 @@
         // Get winner info from URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         const winnerNum = urlParams.get('winner') || '1';
-        const winnerYr = urlParams.get('year') || '2021';
+        const winnerYr = urlParams.get('year') || '2011';
 
         // Update winner display
         document.getElementById('winnerNumber').textContent = winnerNum;
         document.getElementById('winnerYear').textContent = winnerYr;
 
         function nextRound() {
-            // Navigate to Round 3
-            window.location.href = '../ROUND3/start.html';
+            // Go back to homepage
+            window.location.href = '../index.html';
         }
     </script>
 </body>
