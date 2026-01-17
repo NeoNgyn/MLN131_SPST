@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lịch Sử Việt Nam: Thử Thách Vịt Vàng - Chơi</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Fredoka', sans-serif;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(180deg, #87CEEB 0%, #B0E0E6 50%, #5DADE2 100%);
+            position: relative;
+        }
+        /* Sky decorations */
+        .sun {
+            position: absolute;
+            top: 40px;
+            right: 80px;
+            width: 120px;
+            height: 120px;
+            background: #FFD700;
+            border-radius: 50%;
+            box-shadow: 0 0 60px rgba(255, 215, 0, 0.6);
+        }
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 100px;
+            opacity: 0.8;
+        }
+        .cloud:before, .cloud:after {
+            content: '';
+            position: absolute;
+            background: white;
+            border-radius: 100px;
+        }
+        .cloud-1 {
+            width: 120px;
+            height: 40px;
+            top: 80px;
+            left: 10%;
+        }
+        .cloud-1:before {
+            width: 60px;
+            height: 60px;
+            top: -30px;
+            left: 20px;
+        }
+        .cloud-1:after {
+            width: 80px;
+            height: 50px;
+            top: -25px;
+            right: 20px;
+        }
+        .cloud-2 {
+            width: 100px;
+            height: 35px;
+            top: 120px;
+            right: 15%;
+        }
+        .cloud-2:before {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            left: 15px;
+        }
+        .cloud-2:after {
+            width: 70px;
+            height: 45px;
+            top: -20px;
+            right: 15px;
+        }
+        /* Grass area */
+        .grass-area {
+            position: absolute;
+            bottom: 35%;
+            left: 0;
+            right: 0;
+            height: 25%;
+            background: linear-gradient(180deg, #4CAF50 0%, #45a049 100%);
+            border-radius: 50% 50% 0 0 / 40px 40px 0 0;
+        }
+        .tree {
+            position: absolute;
+            bottom: 60%;
+            width: 80px;
+        }
+        .tree-1 { left: 8%; }
+        .tree-2 { right: 12%; }
+        .trunk {
+            width: 20px;
+            height: 50px;
+            background: #8B4513;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+        .leaves {
+            width: 80px;
+            height: 80px;
+            background: #2E7D32;
+            border-radius: 50%;
+            position: relative;
+            top: -40px;
+        }
+        /* Water area */
+        .water-area {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, #0ea5e9 0%, #0284c7 100%);
+            overflow: hidden;
+        }
+        .wave {
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.15)" d="M0,192L48,197.3C96,203,192,213,288,192C384,171,480,117,576,128C672,139,768,213,864,224C960,235,1056,181,1152,144C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: 50% 100%;
+            animation: wave-move 15s linear infinite;
+            opacity: 0.6;
+        }
+        .wave:nth-child(2) {
+            animation-delay: -5s;
+            opacity: 0.4;
+        }
+        @keyframes wave-move {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        /* Main container */
+        .game-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: flex-end;
+            z-index: 10;
+        }
+        /* Ducks container - stationary */
+        .ducks-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 20;
+        }
+        .duck-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+            opacity: 0;
+            transform: translateX(-150px);
+            margin-top: -60px;
+        }
+        .duck-wrapper:first-child {
+            margin-top: 0;
+        }
+        .duck-wrapper:nth-child(1) { z-index: 1; }
+        .duck-wrapper:nth-child(2) { z-index: 2; }
+        .duck-wrapper:nth-child(3) { z-index: 3; }
+        .duck-wrapper:nth-child(4) { z-index: 4; }
+        .duck-wrapper:nth-child(5) { z-index: 5; }
+        .duck-wrapper:nth-child(6) { z-index: 6; }
+        .duck-wrapper.show {
+            animation: duck-slide-in 0.8s ease forwards;
+        }
+        @keyframes duck-slide-in {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .duck-wrapper:hover {
+            transform: scale(1.15) !important;
+        }
+        /* Year bubbles - moving */
+        .year-bubble {
+            position: absolute;
+            left: 150px;
+            background: white;
+            border-radius: 30px;
+            padding: 12px 28px;
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 3px solid #FFD700;
+            opacity: 1;
+            z-index: 10;
+        }
+        .duck-wrapper:nth-child(1) .year-bubble.move {
+            animation: year-move-horizontal 7s ease-in-out forwards;
+        }
+        .duck-wrapper:nth-child(2) .year-bubble.move {
+            animation: year-move-horizontal 7.5s ease-in-out forwards;
+        }
+        .duck-wrapper:nth-child(3) .year-bubble.move {
+            animation: year-move-horizontal 6s ease-in-out forwards;
+        }
+        .duck-wrapper:nth-child(4) .year-bubble.move {
+            animation: year-move-horizontal 8s ease-in-out forwards;
+        }
+        .duck-wrapper:nth-child(5) .year-bubble.move {
+            animation: year-move-horizontal 9s ease-in-out forwards;
+        }
+        .duck-wrapper:nth-child(6) .year-bubble.move {
+            animation: year-move-horizontal 9.5s ease-in-out forwards;
+        }
+        @keyframes year-move-horizontal {
+            to {
+                transform: translateX(calc(100vw - 400px));
+            }
+        }
+        .duck-image-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+        }
+        .duck-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.25));
+            transform: rotateY(180deg);
+        }
+        .duck-number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: #000;
+            border: 4px solid #FFD700;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        /* Countdown timer */
+        .countdown {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 180px;
+            font-weight: 900;
+            color: #FFD700;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.8),
+                         0 0 60px rgba(255, 215, 0, 0.6),
+                         4px 4px 0 #FF6B00,
+                         8px 8px 20px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            opacity: 0;
+            display: none;
+            animation: countdown-pulse 1s ease-in-out;
+        }
+        .countdown.show {
+            display: block;
+            opacity: 1;
+        }
+        @keyframes countdown-pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.2); }
+        }
+        /* Finish line */
+        .finish-line {
+            position: fixed;
+            right: 40px;
+            bottom: 0;
+            width: 50px;
+            height: 50%;
+            background: repeating-linear-gradient(
+                0deg,
+                #000,
+                #000 30px,
+                #fff 30px,
+                #fff 60px
+            );
+            border: 5px solid #FFD700;
+            border-bottom: none;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            z-index: 5;
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .finish-flag {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #FFD700;
+            padding: 10px 20px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 24px;
+            color: #000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            white-space: nowrap;
+        }
+    </style></head>
+<body>
+    <!-- Sun -->
+    <div class="sun"></div>
+
+    <!-- Clouds -->
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+
+    <!-- Trees -->
+    <div class="tree tree-1">
+        <div class="leaves"></div>
+        <div class="trunk"></div>
+    </div>
+    <div class="tree tree-2">
+        <div class="leaves"></div>
+        <div class="trunk"></div>
+    </div>
+
+    <!-- Grass -->
+    <div class="grass-area"></div>
+
+    <!-- Water with waves -->
+    <div class="water-area">
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <!-- Main game content -->
+    <div class="game-container">
+        <!-- Ducks Container -->
+        <div class="ducks-container">
+            <!-- Duck 1 -->
+            <div class="duck-wrapper">
+                <div class="year-bubble">2021</div>
+                <div class="duck-image-container">
+                    <img src="../media/duck.png" alt="Duck 1" class="duck-image">
+                    <div class="duck-number">1</div>
+                </div>
+            </div>
+
+            <!-- Duck 2 -->
+            <div class="duck-wrapper">
+                <div class="year-bubble">2020</div>
+                <div class="duck-image-container">
+                    <img src="../media/duck.png" alt="Duck 2" class="duck-image">
+                    <div class="duck-number">2</div>
+                </div>
+            </div>
+
+            <!-- Duck 3 -->
+            <div class="duck-wrapper">
+                <div class="year-bubble">2018</div>
+                <div class="duck-image-container">
+                    <img src="../media/duck.png" alt="Duck 3" class="duck-image">
+                    <div class="duck-number">3</div>
+                </div>
+            </div>
+
+            <!-- Duck 4 -->
+            <div class="duck-wrapper">
+                <div class="year-bubble">2017</div>
+                <div class="duck-image-container">
+                    <img src="../media/duck.png" alt="Duck 4" class="duck-image">
+                    <div class="duck-number">4</div>
+                </div>
+            </div>
+
+            <!-- Duck 5 -->
+            <div class="duck-wrapper">
+                <div class="year-bubble">2019</div>
+                <div class="duck-image-container">
+                    <img src="../media/duck.png" alt="Duck 5" class="duck-image">
+                    <div class="duck-number">5</div>
+                </div>
+            </div>
+
+            <!-- Duck 6 -->
+            <div class="duck-wrapper">
+                <div class="year-bubble">2022</div>
+                <div class="duck-image-container">
+                    <img src="../media/duck.png" alt="Duck 6" class="duck-image">
+                    <div class="duck-number">6</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Countdown Timer -->
+    <div class="countdown" id="countdown">3</div>
+
+    <!-- Finish Line -->
+    <div class="finish-line" id="finishLine">
+        <div class="finish-flag">ĐÍCH</div>
+    </div>
+
+    <script>
+        // Year data with durations - 2021 (correct answer) has shortest duration
+        const yearData = [
+            { number: 1, year: '2021', duration: 6000 },  // Correct answer - fastest
+            { number: 2, year: '2020', duration: 7000 },
+            { number: 3, year: '2018', duration: 9000 },
+            { number: 4, year: '2017', duration: 10000 },
+            { number: 5, year: '2019', duration: 9500 },
+            { number: 6, year: '2022', duration: 8000 }
+        ];
+
+        let raceStarted = false;
+        let winnerDetected = false;
+
+        // Auto-show ducks on page load with slide-in animation
+        window.addEventListener('load', () => {
+            const ducks = document.querySelectorAll('.duck-wrapper');
+            const countdownEl = document.getElementById('countdown');
+            
+            ducks.forEach((duck, index) => {
+                setTimeout(() => {
+                    duck.classList.add('show');
+                    
+                    // After last duck appears, show countdown then start movement
+                    if (index === ducks.length - 1) {
+                        setTimeout(() => {
+                            let count = 3;
+                            
+                            const showCountdown = () => {
+                                if (count > 0) {
+                                    countdownEl.textContent = count;
+                                    countdownEl.classList.add('show');
+                                    
+                                    setTimeout(() => {
+                                        countdownEl.classList.remove('show');
+                                        count--;
+                                        setTimeout(showCountdown, 100);
+                                    }, 900);
+                                } else {
+                                    // Start year bubble movement after countdown
+                                    ducks.forEach(d => {
+                                        const yearBubble = d.querySelector('.year-bubble');
+                                        yearBubble.classList.add('move');
+                                    });
+                                    raceStarted = true;
+                                    
+                                    // Detect winner (first year to finish)
+                                    detectWinner();
+                                }
+                            };
+                            
+                            showCountdown();
+                        }, 800); // 800ms after last duck appears
+                    }
+                }, 300 + (index * 400)); // 300ms initial delay, then 400ms between each duck
+            });
+        });
+
+        function detectWinner() {
+            if (winnerDetected) return;
+            
+            // Find the year with shortest duration
+            let fastestYear = yearData[0];
+            yearData.forEach(yearItem => {
+                if (yearItem.duration < fastestYear.duration) {
+                    fastestYear = yearItem;
+                }
+            });
+            
+            // Navigate to end.html after the winner finishes
+            setTimeout(() => {
+                if (!winnerDetected) {
+                    winnerDetected = true;
+                    window.location.href = `end.html?winner=${fastestYear.number}&year=${fastestYear.year}`;
+                }
+            }, fastestYear.duration);
+        }
+    </script>
+
+</body></html>
