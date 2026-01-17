@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thử Thách Vịt Vàng - Lịch Sử Việt Nam</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Fredoka', sans-serif;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(180deg, #87CEEB 0%, #B0E0E6 50%, #5DADE2 100%);
+            position: relative;
+        }
+        /* Sky decorations */
+        .sun {
+            position: absolute;
+            top: 40px;
+            right: 80px;
+            width: 120px;
+            height: 120px;
+            background: #FFD700;
+            border-radius: 50%;
+            box-shadow: 0 0 60px rgba(255, 215, 0, 0.6);
+            animation: sun-glow 3s ease-in-out infinite;
+        }
+        @keyframes sun-glow {
+            0%, 100% { box-shadow: 0 0 60px rgba(255, 215, 0, 0.6); }
+            50% { box-shadow: 0 0 80px rgba(255, 215, 0, 0.8); }
+        }
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 100px;
+            opacity: 0.8;
+        }
+        .cloud:before, .cloud:after {
+            content: '';
+            position: absolute;
+            background: white;
+            border-radius: 100px;
+        }
+        .cloud-1 {
+            width: 120px;
+            height: 40px;
+            top: 80px;
+            left: 10%;
+            animation: cloud-float 20s linear infinite;
+        }
+        .cloud-1:before {
+            width: 60px;
+            height: 60px;
+            top: -30px;
+            left: 20px;
+        }
+        .cloud-1:after {
+            width: 80px;
+            height: 50px;
+            top: -25px;
+            right: 20px;
+        }
+        .cloud-2 {
+            width: 100px;
+            height: 35px;
+            top: 120px;
+            right: 15%;
+            animation: cloud-float 25s linear infinite reverse;
+        }
+        .cloud-2:before {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            left: 15px;
+        }
+        .cloud-2:after {
+            width: 70px;
+            height: 45px;
+            top: -20px;
+            right: 15px;
+        }
+        @keyframes cloud-float {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50px); }
+        }
+        /* Grass area */
+        .grass-area {
+            position: absolute;
+            bottom: 35%;
+            left: 0;
+            right: 0;
+            height: 25%;
+            background: linear-gradient(180deg, #4CAF50 0%, #45a049 100%);
+            border-radius: 50% 50% 0 0 / 40px 40px 0 0;
+        }
+        .tree {
+            position: absolute;
+            bottom: 60%;
+            width: 80px;
+        }
+        .tree-1 { left: 8%; }
+        .tree-2 { right: 12%; }
+        .trunk {
+            width: 20px;
+            height: 50px;
+            background: #8B4513;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+        .leaves {
+            width: 80px;
+            height: 80px;
+            background: #2E7D32;
+            border-radius: 50%;
+            position: relative;
+            top: -40px;
+        }
+        /* Water area */
+        .water-area {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, #0ea5e9 0%, #0284c7 100%);
+            overflow: hidden;
+        }
+        .wave {
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.15)" d="M0,192L48,197.3C96,203,192,213,288,192C384,171,480,117,576,128C672,139,768,213,864,224C960,235,1056,181,1152,144C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: 50% 100%;
+            animation: wave-move 15s linear infinite;
+            opacity: 0.6;
+        }
+        .wave:nth-child(2) {
+            animation-delay: -5s;
+            opacity: 0.4;
+        }
+        @keyframes wave-move {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        /* Main container */
+        .main-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            z-index: 10;
+        }
+        /* Title section */
+        .title-section {
+            text-align: center;
+            margin-bottom: 50px;
+            opacity: 0;
+            animation: fade-in 1s ease forwards;
+        }
+        @keyframes fade-in {
+            to { opacity: 1; }
+        }
+        .main-title {
+            font-size: 56px;
+            font-weight: 700;
+            color: #FFD700;
+            text-shadow: 3px 3px 0 #FF6B00, 6px 6px 20px rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-size: 36px;
+            font-weight: 600;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
+        }
+        .description {
+            font-size: 28px;
+            font-weight: 500;
+            color: #FFF9E6;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        /* Duck decoration */
+        .duck-decoration {
+            width: 150px;
+            height: 150px;
+            margin: 30px auto;
+            opacity: 0;
+            animation: duck-bounce 2s ease infinite, fade-in 1s ease forwards 0.5s;
+        }
+        @keyframes duck-bounce {
+            0%, 100% { transform: translateY(0) rotateY(180deg); }
+            50% { transform: translateY(-20px) rotateY(180deg); }
+        }
+        .duck-decoration img {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3));
+        }
+        /* Buttons */
+        .button-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            opacity: 0;
+            animation: fade-in 1s ease forwards 1s;
+        }
+        .game-button {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+            padding: 20px 50px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 8px 0 #15803d, 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+        }
+        .game-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 11px 0 #15803d, 0 13px 35px rgba(0, 0, 0, 0.4);
+        }
+        .game-button:active {
+            transform: translateY(4px);
+            box-shadow: 0 4px 0 #15803d, 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        .game-button.secondary {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            box-shadow: 0 8px 0 #1e40af, 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .game-button.secondary:hover {
+            box-shadow: 0 11px 0 #1e40af, 0 13px 35px rgba(0, 0, 0, 0.4);
+        }
+        .game-button.secondary:active {
+            box-shadow: 0 4px 0 #1e40af, 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        .game-button .material-icons-round {
+            font-size: 38px;
+        }
+        /* Popup overlay */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            animation: fade-in 0.3s ease;
+        }
+        .popup-overlay.show {
+            display: flex;
+        }
+        /* Popup content */
+        .popup-content {
+            background: white;
+            border-radius: 30px;
+            padding: 40px 50px;
+            max-width: 700px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+            transform: scale(0.8);
+            animation: popup-appear 0.3s ease forwards;
+        }
+        @keyframes popup-appear {
+            to {
+                transform: scale(1);
+            }
+        }
+        .popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 15px;
+        }
+        .popup-title {
+            font-size: 38px;
+            font-weight: 700;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .popup-title .material-icons-round {
+            color: #FFD700;
+            font-size: 42px;
+        }
+        .close-button {
+            background: #ef4444;
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+        }
+        .close-button:hover {
+            background: #dc2626;
+            transform: scale(1.1);
+        }
+        .close-button .material-icons-round {
+            font-size: 28px;
+        }
+        .popup-body {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #333;
+        }
+        .popup-body h3 {
+            color: #22c55e;
+            font-size: 26px;
+            margin: 25px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .popup-body h3 .material-icons-round {
+            font-size: 28px;
+        }
+        .popup-body ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+        .popup-body li {
+            margin-bottom: 12px;
+        }
+        .popup-body strong {
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+        .highlight {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sun -->
+    <div class="sun"></div>
+
+    <!-- Clouds -->
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+
+    <!-- Trees -->
+    <div class="tree tree-1">
+        <div class="leaves"></div>
+        <div class="trunk"></div>
+    </div>
+    <div class="tree tree-2">
+        <div class="leaves"></div>
+        <div class="trunk"></div>
+    </div>
+
+    <!-- Grass -->
+    <div class="grass-area"></div>
+
+    <!-- Water with waves -->
+    <div class="water-area">
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-container">
+        <div class="title-section">
+            <h1 class="main-title">Chương 3</h1>
+            <h2 class="subtitle">Chủ nghĩa xã hội và thời kỳ quá độ lên CNXH</h2>
+            <p class="description">Thành tựu xây dựng CNXH ở Việt Nam<br>sau gần 40 năm Đổi mới</p>
+        </div>
+
+        <div class="duck-decoration">
+            <img src="media/duck.png" alt="Vịt Vàng">
+        </div>
+
+        <div class="button-container">
+            <button class="game-button secondary" onclick="showInstructions()">
+                <span class="material-icons-round">help_outline</span>
+                <span>HƯỚNG DẪN CHƠI</span>
+            </button>
+            <button class="game-button" onclick="startGame()">
+                <span class="material-icons-round">play_arrow</span>
+                <span>BẮT ĐẦU CHƠI</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Popup instructions -->
+    <div class="popup-overlay" id="popupOverlay" onclick="closePopup(event)">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <div class="popup-header">
+                <div class="popup-title">
+                    <span class="material-icons-round">info</span>
+                    <span>Hướng Dẫn Chơi</span>
+                </div>
+                <button class="close-button" onclick="closePopup()">
+                    <span class="material-icons-round">close</span>
+                </button>
+            </div>
+            <div class="popup-body">
+                <h3><span class="material-icons-round">sports_score</span>Mục tiêu trò chơi</h3>
+                <p>
+                    Chào mừng bạn đến với <span class="highlight">Thử Thách Vịt Vàng</span>! 
+                    Trò chơi sẽ kiểm tra kiến thức lịch sử Việt Nam của bạn thông qua các câu hỏi về các sự kiện quan trọng.
+                </p>
+
+                <h3><span class="material-icons-round">videogame_asset</span>Cách chơi</h3>
+                <ul>
+                    <li><strong>Bước 1:</strong> Đọc kỹ câu hỏi về các sự kiện lịch sử Việt Nam</li>
+                    <li><strong>Bước 2:</strong> Quan sát 6 con vịt, mỗi con mang một đáp án (năm hoặc thông tin khác)</li>
+                    <li><strong>Bước 3 (Round 1 & 2):</strong> Các đáp án sẽ được xáo trộn, hãy nhớ vị trí đáp án đúng!</li>
+                    <li><strong>Bước 3 (Round 3):</strong> Các đáp án hiển thị cố định, không xáo trộn</li>
+                    <li><strong>Bước 4:</strong> Nhấn "BẮT ĐẦU" để bắt đầu cuộc đua</li>
+                    <li><strong>Bước 5:</strong> Con vịt có đáp án đúng sẽ <span class="highlight">chạy nhanh nhất</span> và về đích trước!</li>
+                </ul>
+
+                <h3><span class="material-icons-round">emoji_events</span>Chiến thắng</h3>
+                <p>
+                    Con vịt về đích đầu tiên chính là <strong>đáp án đúng</strong> của câu hỏi. 
+                    Trò chơi có <span class="highlight">3 vòng chơi</span>, mỗi vòng là một câu hỏi khác nhau về lịch sử Việt Nam.
+                </p>
+
+                <h3><span class="material-icons-round">lightbulb</span>Mẹo nhỏ</h3>
+                <ul>
+                    <li>Tập trung quan sát khi các đáp án bị xáo trộn (Round 1 & 2)</li>
+                    <li>Ghi nhớ kiến thức lịch sử để dự đoán đáp án đúng</li>
+                    <li>Đọc kỹ câu hỏi và suy nghĩ trước khi bắt đầu</li>
+                </ul>
+
+                <p style="margin-top: 30px; text-align: center; font-size: 24px; font-weight: 700; color: #22c55e;">
+                    Chúc bạn chơi vui vẻ và học được nhiều kiến thức! 🦆✨
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showInstructions() {
+            document.getElementById('popupOverlay').classList.add('show');
+        }
+
+        function closePopup(event) {
+            if (!event || event.target === document.getElementById('popupOverlay')) {
+                document.getElementById('popupOverlay').classList.remove('show');
+            }
+        }
+
+        function startGame() {
+            window.location.href = 'ROUND1/start.html';
+        }
+
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closePopup();
+            }
+        });
+    </script>
+</body>
+</html>
