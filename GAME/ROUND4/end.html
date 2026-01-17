@@ -229,14 +229,17 @@
         .year-bubble {
             background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
             border-radius: 25px;
-            padding: 10px 30px;
-            font-size: 42px;
+            padding: 12px 30px;
+            font-size: 32px;
             font-weight: 700;
             color: white;
             text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
             box-shadow: 0 6px 20px rgba(255, 165, 0, 0.4);
             margin-bottom: 20px;
             border: 4px solid white;
+            max-width: 400px;
+            text-align: center;
+            line-height: 1.3;
         }
         .duck-image-container {
             position: relative;
@@ -378,38 +381,38 @@
 
         <!-- Question Panel -->
         <div class="question-panel">
-            <p class="question-text" id="questionText">Nghị quyết Trung ương 4 (khóa XI) diễn ra vào năm nào?</p>
+            <p class="question-text" id="questionText">Sự kiện quan trọng nhất diễn ra ở Việt Nam năm 1986 là gì?</p>
         </div>
 
         <!-- Winner Duck -->
         <div class="winner-duck-container">
-            <div class="year-bubble" id="winnerYear">2011</div>
+            <div class="year-bubble" id="winnerYear">Khởi xướng công cuộc Đổi mới</div>
             <div class="duck-image-container">
                 <img src="../media/duck.png" alt="Winner Duck" class="duck-image">
-                <div class="duck-number" id="winnerNumber">1</div>
+                <div class="duck-number" id="winnerNumber">4</div>
             </div>
         </div>
     </div>
 
     <!-- Next Button -->
     <button class="next-button" onclick="nextRound()">
-        <span>CÂU TIẾP THEO</span>
-        <span class="material-icons-round">arrow_forward</span>
+        <span>HOÀN THÀNH</span>
+        <span class="material-icons-round">check_circle</span>
     </button>
 
     <script>
         // Get winner info from URL parameters
         const urlParams = new URLSearchParams(window.location.search);
-        const winnerNum = urlParams.get('winner') || '1';
-        const winnerYr = urlParams.get('year') || '2011';
+        const winnerNum = urlParams.get('winner') || '4';
+        const winnerYr = urlParams.get('year') || 'Khởi xướng công cuộc Đổi mới';
 
         // Update winner display
         document.getElementById('winnerNumber').textContent = winnerNum;
         document.getElementById('winnerYear').textContent = winnerYr;
 
         function nextRound() {
-            // Go back to homepage
-            window.location.href = '../ROUND4/start.html';
+            // Navigate back to main game page or home
+            window.location.href = '../ROUND5/start.html';
         }
     </script>
 </body>
