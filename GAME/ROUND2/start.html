@@ -3,7 +3,6 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lịch Sử Việt Nam: Thử Thách Vịt Vàng</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
 <style>
         * {
@@ -12,7 +11,7 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Fredoka', sans-serif;
+            font-family: Arial, sans-serif;
             width: 100vw;
             height: 100vh;
             overflow: hidden;
@@ -495,12 +494,12 @@
                         setTimeout(doNextRound, 100);
                     });
                 } else {
-                    // All shuffles done, now hide bubbles
+                    // All shuffles done, now hide bubbles after 3 seconds for reading
                     setTimeout(() => {
                         document.querySelectorAll('.year-bubble').forEach(bubble => {
                             bubble.classList.add('hidden');
                         });
-                    }, 300);
+                    }, 3300);
                 }
             }
             
