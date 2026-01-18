@@ -467,19 +467,34 @@
         </div>
     </div>
 
+    <!-- Audio element for button sound -->
+    <audio id="buttonSound" src="media/button.mp3" preload="auto"></audio>
+
     <script>
+        // Function to play button sound
+        function playButtonSound() {
+            const sound = document.getElementById('buttonSound');
+            sound.currentTime = 0; // Reset to start
+            sound.play().catch(error => console.log('Audio play failed:', error));
+        }
+
         function showInstructions() {
+            playButtonSound();
             document.getElementById('popupOverlay').classList.add('show');
         }
 
         function closePopup(event) {
             if (!event || event.target === document.getElementById('popupOverlay')) {
+                playButtonSound();
                 document.getElementById('popupOverlay').classList.remove('show');
             }
         }
 
         function startGame() {
-            window.location.href = 'ROUND1/start.html';
+            playButtonSound();
+            setTimeout(() => {
+                window.location.href = 'ROUND1/start.html';
+            }, 100); // Small delay to ensure sound starts playing
         }
 
         // Close popup with Escape key

@@ -397,7 +397,17 @@
         <span class="material-icons-round">arrow_forward</span>
     </button>
 
+    <!-- Audio element for button sound -->
+    <audio id="buttonSound" src="../media/button.mp3" preload="auto"></audio>
+
     <script>
+        // Function to play button sound
+        function playButtonSound() {
+            const sound = document.getElementById('buttonSound');
+            sound.currentTime = 0;
+            sound.play().catch(error => console.log('Audio play failed:', error));
+        }
+
         // Get winner info from URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         const winnerNum = urlParams.get('winner') || '1';
@@ -409,7 +419,10 @@
 
         function nextRound() {
             // Navigate to Round 3
-            window.location.href = '../ROUND3/start.html';
+            playButtonSound();
+            setTimeout(() => {
+                window.location.href = '../ROUND3/start.html';
+            }, 100);
         }
     </script>
 </body>

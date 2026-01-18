@@ -392,8 +392,18 @@
         <span id="btnText">CHUẨN BỊ CÂU HỎI</span>
     </button>
 
+    <!-- Audio element for button sound -->
+    <audio id="buttonSound" src="../media/button.mp3" preload="auto"></audio>
+
     <script>
         let gameState = 'prepare'; // 'prepare' or 'ready'
+
+        // Function to play button sound
+        function playButtonSound() {
+            const sound = document.getElementById('buttonSound');
+            sound.currentTime = 0;
+            sound.play().catch(error => console.log('Audio play failed:', error));
+        }
 
         function shuffleDucks() {
             const duckWrappers = document.querySelectorAll('.duck-wrapper');
@@ -476,6 +486,9 @@
             const playIcon = btn.querySelector('.play-icon');
 
             if (gameState === 'prepare') {
+                // Play button sound
+                playButtonSound();
+                
                 // Disable button during animation
                 btn.style.pointerEvents = 'none';
                 
@@ -516,7 +529,10 @@
                 });
             } else if (gameState === 'ready') {
                 // Navigate to play.html
-                window.location.href = 'play.html';
+                playButtonSound();
+                setTimeout(() => {
+                    window.location.href = 'play.html';
+                }, 100);
             }
         }
     </script>
