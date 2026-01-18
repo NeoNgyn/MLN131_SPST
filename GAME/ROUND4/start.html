@@ -537,12 +537,12 @@
                                 bubble.classList.remove('hidden');
                             });
                             
-                            // Hide bubbles again after 0.8 seconds
+                            // Hide bubbles again after 2 seconds
                             setTimeout(() => {
                                 document.querySelectorAll('.year-bubble').forEach(bubble => {
                                     bubble.classList.add('hidden');
                                 });
-                            }, 700);
+                            }, 2500);
                         }, 1000);
                     }, 800);
                 }, 3000); // 3 seconds delay between shuffles
@@ -581,7 +581,7 @@
                                 gameState = 'ready';
                                 btn.style.pointerEvents = 'auto';
                                 
-                                // After button changes, wait 1s then shuffle
+                                // After button changes, wait 3s then shuffle
                                 setTimeout(() => {
                                     // Hide year bubbles
                                     document.querySelectorAll('.year-bubble').forEach(bubble => {
@@ -592,7 +592,7 @@
                                     setTimeout(() => {
                                         shuffleDucks();
                                     }, 500);
-                                }, 1000);
+                                }, 3000);
                             }, 1000);
                         }
                     }, 800 + (index * 600)); // 800ms after question panel, then 600ms between each duck
