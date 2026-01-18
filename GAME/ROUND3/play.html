@@ -483,6 +483,10 @@
                                         setTimeout(showCountdown, 100);
                                     }, 900);
                                 } else {
+                                    // Play whistle sound
+                                    const whistleSound = document.getElementById('whistleSound');
+                                    whistleSound.play().catch(error => console.log('Audio play failed:', error));
+                                    
                                     // Start horizontal movement after countdown
                                     ducks.forEach(d => {
                                         d.classList.remove('show');
@@ -522,5 +526,8 @@
             }, fastestDuck.duration + 800);
         }
     </script>
+
+    <!-- Audio element for whistle sound -->
+    <audio id="whistleSound" src="../media/Whistle-sound.mp3" preload="auto"></audio>
 
 </body></html>

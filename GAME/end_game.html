@@ -384,9 +384,22 @@
         createConfetti();
         setInterval(createConfetti, 4000);
 
+        // Function to play button sound
+        function playButtonSound() {
+            const sound = document.getElementById('buttonSound');
+            sound.currentTime = 0;
+            sound.play().catch(error => console.log('Audio play failed:', error));
+        }
+
         function goHome() {
-            window.location.href = 'index.html';
+            playButtonSound();
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 100);
         }
     </script>
+    
+    <!-- Audio element for button sound -->
+    <audio id="buttonSound" src="media/button.mp3" preload="auto"></audio>
 </body>
 </html>
