@@ -181,22 +181,22 @@
             animation: duck-slide-in 0.8s ease forwards;
         }
         .duck-wrapper:nth-child(1).move {
-            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 6s ease-in-out forwards;
+            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 7.2s ease-in-out forwards;
         }
         .duck-wrapper:nth-child(2).move {
-            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 7s ease-in-out forwards;
+            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 7.8s ease-in-out forwards;
         }
         .duck-wrapper:nth-child(3).move {
-            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 9s ease-in-out forwards;
-        }
-        .duck-wrapper:nth-child(4).move {
-            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 10s ease-in-out forwards;
-        }
-        .duck-wrapper:nth-child(5).move {
             animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 9.5s ease-in-out forwards;
         }
+        .duck-wrapper:nth-child(4).move {
+            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 9.8s ease-in-out forwards;
+        }
+        .duck-wrapper:nth-child(5).move {
+            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 7.5s ease-in-out forwards;
+        }
         .duck-wrapper:nth-child(6).move {
-            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 8s ease-in-out forwards;
+            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 7s ease-in-out forwards;
         }
         @keyframes duck-slide-in {
             to {
@@ -341,7 +341,7 @@
         <div class="ducks-container">
             <!-- Duck 1 -->
             <div class="duck-wrapper">
-                <div class="year-bubble">2021</div>
+                <div class="year-bubble">2022</div>
                 <div class="duck-image-container">
                     <img src="../media/duck.png" alt="Duck 1" class="duck-image">
                     <div class="duck-number">1</div>
@@ -386,7 +386,7 @@
 
             <!-- Duck 6 -->
             <div class="duck-wrapper">
-                <div class="year-bubble">2022</div>
+                <div class="year-bubble">2021</div>
                 <div class="duck-image-container">
                     <img src="../media/duck.png" alt="Duck 6" class="duck-image">
                     <div class="duck-number">6</div>
@@ -406,12 +406,12 @@
     <script>
         // Year data with durations - 2021 (correct answer) has shortest duration
         const yearData = [
-            { number: 1, year: '2021', duration: 6000 },  // Correct answer - fastest
-            { number: 2, year: '2020', duration: 7000 },
-            { number: 3, year: '2018', duration: 9000 },
-            { number: 4, year: '2017', duration: 10000 },
-            { number: 5, year: '2019', duration: 9500 },
-            { number: 6, year: '2022', duration: 8000 }
+            { number: 1, year: '2022', duration: 7200 },
+            { number: 2, year: '2020', duration: 7800 },
+            { number: 3, year: '2018', duration: 9500 },
+            { number: 4, year: '2017', duration: 9800 },
+            { number: 5, year: '2019', duration: 7500 },
+            { number: 6, year: '2021', duration: 7000 }  // Correct answer - fastest
         ];
 
         let raceStarted = false;
