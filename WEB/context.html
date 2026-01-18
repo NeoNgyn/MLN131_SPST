@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hành Trình Đổi Mới - Bối cảnh Lịch sử</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Noto+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ab2b38",
+                        "background-dark": "#0a0a0a",
+                        "card-dark": "#161616",
+                        "accent-gold": "#c5a059",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Noto Sans', sans-serif;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Noto Serif', serif;
+        }
+        .historical-overlay {
+            background: linear-gradient(to right, rgba(10,10,10,1) 0%, rgba(10,10,10,0.8) 50%, rgba(10,10,10,0.4) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-gray-200">
+<div class="flex min-h-screen">
+<aside class="w-72 bg-[#050505] border-r border-accent-gold/10 sticky top-0 h-screen overflow-y-auto hidden lg:flex flex-col">
+<div class="p-8 border-b border-accent-gold/10">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-12 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-icons-round text-3xl">history_edu</span>
+</div>
+<div>
+<h2 class="text-primary font-bold text-lg leading-tight font-display">Hành Trình</h2>
+<p class="text-xs uppercase tracking-widest text-accent-gold font-bold">Đổi Mới</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 p-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary font-bold" href="#boicanh">
+<span class="material-icons-round">auto_stories</span>
+<span class="text-sm">Bối cảnh Lịch sử</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors text-gray-400" href="#kinhte">
+<span class="material-icons-round">trending_up</span>
+<span class="text-sm">Trụ cột Kinh tế</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors text-gray-400" href="#xahoi">
+<span class="material-icons-round">groups</span>
+<span class="text-sm">Phát triển Xã hội</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors text-gray-400" href="#chinhtri">
+<span class="material-icons-round">gavel</span>
+<span class="text-sm">Hệ thống Chính trị</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors text-gray-400" href="#quocphong">
+<span class="material-icons-round">shield</span>
+<span class="text-sm">Quốc phòng &amp; An ninh</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors text-gray-400" href="#doingoai">
+<span class="material-icons-round">public</span>
+<span class="text-sm">Hội nhập Đối ngoại</span>
+</a>
+</nav>
+<div class="p-6 text-center">
+<p class="text-[10px] text-gray-500 uppercase tracking-widest">© 2024 - Hành Trình Đổi Mới</p>
+</div>
+</aside>
+<main class="flex-1 overflow-x-hidden">
+<section class="relative h-[70vh] flex items-center">
+<video autoplay loop muted playsinline class="absolute inset-0 h-full object-cover" style="width: 200%; max-width: 200%; left: -50%;">
+<source src="media_src/home_bg_1.mp4" type="video/mp4">
+</video>
+<div class="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/80 to-transparent"></div>
+<div class="relative z-10 px-12 max-w-4xl">
+<div class="flex items-center gap-2 mb-6">
+<div class="h-[2px] w-12 bg-accent-gold"></div>
+<span class="text-accent-gold font-bold uppercase tracking-[0.3em] text-xs">Cột mốc lịch sử</span>
+</div>
+<h1 class="text-white text-6xl md:text-8xl font-display font-bold leading-tight mb-6">Hành Trình <br/><span class="text-accent-gold italic">Đổi Mới</span></h1>
+<p class="text-gray-300 text-xl max-w-2xl font-light leading-relaxed border-l-2 border-primary pl-6">"Từ bao cấp đến hội nhập — Cuộc hành trình 40 năm của bản lĩnh dân tộc và khát vọng xã hội chủ nghĩa."</p>
+</div>
+<div class="absolute bottom-10 left-12 flex flex-col items-center gap-2">
+<span class="text-[10px] uppercase tracking-widest text-accent-gold font-bold">Khám phá lịch sử</span>
+<span class="material-icons-round animate-bounce text-accent-gold">expand_more</span>
+</div>
+</section>
+<section class="py-24 px-12 bg-background-dark" id="boicanh">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-7 space-y-8">
+<div class="inline-block px-4 py-1 border border-accent-gold/30 rounded-full">
+<span class="text-accent-gold text-xs font-bold uppercase tracking-widest">1986: Bước ngoặt thời đại</span>
+</div>
+<h2 class="text-4xl md:text-5xl font-display font-bold text-white leading-tight">Bối cảnh Lịch sử: <br/><span class="text-primary">Khát vọng chuyển mình</span></h2>
+<div class="space-y-6 text-gray-400 text-lg leading-relaxed">
+<p>
+                                    Vào giữa thập niên 1980, Việt Nam đứng trước những thử thách vô cùng khắc nghiệt. Đất nước vừa bước ra khỏi các cuộc chiến tranh bảo vệ biên giới, trong khi nền kinh tế tập trung quan liêu bao cấp đã bộc lộ những hạn chế sâu sắc: lạm phát phi mã, khan hiếm hàng hóa nhu yếu phẩm và đời sống nhân dân gặp nhiều khó khăn.
+                                </p>
+<div class="bg-card-dark border-l-4 border-accent-gold p-6 my-8">
+<p class="italic text-gray-300">
+                                        "Đổi mới là yêu cầu bức thiết của sự nghiệp cách mạng, là vấn đề có ý nghĩa sống còn." 
+                                        <span class="block mt-2 font-bold text-sm not-italic text-accent-gold">— Văn kiện Đại hội VI</span>
+</p>
+</div>
+<p>
+                                    Tháng 12 năm 1986, Đại hội Đảng toàn quốc lần thứ VI đã đưa ra quyết sách lịch sử: Thực hiện công cuộc Đổi mới toàn diện. Đây không chỉ là sự thay đổi về mô hình kinh tế, mà còn là sự đổi mới về tư duy chính trị và tầm nhìn đối ngoại, mở đường cho Việt Nam hội nhập mạnh mẽ với thế giới.
+                                </p>
+</div>
+</div>
+<div class="lg:col-span-5">
+<div class="relative group">
+<div class="absolute -inset-4 border border-accent-gold/20 rounded-xl transition-all group-hover:inset-0"></div>
+<div class="relative overflow-hidden rounded-lg aspect-[4/5] bg-gray-800 shadow-2xl">
+<img alt="Cảnh phố phường thời bao cấp" class="w-full h-full object-cover grayscale contrast-125 opacity-80 hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZT8SNTgOY-R90Sk4dSDek5aZlaLp631e5z1g7LeM1t1GyXz5-Ea5gylIJgNcZbpAxwdELiCQX9OISiDKPPZunHyga0Xh3tyg4-4w7f9_PIYi_amWb9pd8W2mK-x5eiq4o8zr3Qh8TA3xGwf32wqlPJXxGZBuzFClcHxvfNHUtCb1D87EAcC84d3QUPgY3ZHeW0syk8FUnUXk3umcZILSyC6VtoBomKYUXUwip4wZDgcNTs5M0GpY06O5WbNAcI68BohKPmOdQ6Cs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<p class="text-xs text-accent-gold font-bold uppercase tracking-widest mb-1">Tư liệu lịch sử</p>
+<p class="text-white font-display text-sm">Cảnh sinh hoạt thời bao cấp tại Hà Nội đầu những năm 1980</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="max-w-[1200px] mx-auto px-8 py-12">
+<footer class="bg-[#050505] text-white p-16 rounded-3xl relative overflow-hidden border border-accent-gold/10">
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[120px] rounded-full -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-accent-gold/5 blur-[80px] rounded-full -ml-20 -mb-20"></div>
+<div class="relative z-10 text-center max-w-4xl mx-auto">
+<span class="material-icons-round text-accent-gold text-5xl mb-8 opacity-50">format_quote</span>
+<h2 class="font-display font-bold mb-10 italic leading-tight" style="font-size: 2.6rem;">
+                            "Vì lợi ích mười năm thì phải trồng cây,<br/> vì lợi ích trăm năm thì phải trồng người."
+                        </h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+<p class="text-accent-gold font-bold uppercase tracking-[0.4em] mb-12">Hồ Chí Minh</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-white/5">
+<a class="text-gray-500 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest" href="#">Tải Báo cáo Tổng kết</a>
+<a class="text-gray-500 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest" href="#">Thư viện Ảnh</a>
+<a class="text-gray-500 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest" href="#">Thông cáo báo chí</a>
+</div>
+<div class="mt-12 text-[10px] text-gray-600 uppercase tracking-[0.2em]">
+                            © 2024 Vietnam Renovation Digital Exhibit. Designed for Education.
+                        </div>
+</div>
+</footer>
+</div>
+</main>
+</div>
+
+</body></html>
