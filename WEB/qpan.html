@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dấu ấn Quốc phòng - An ninh</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#445936", // Military Green
+                        "secondary": "#906f4f", // Bronze/Gold
+                        "accent": "#992630", // Deep Red
+                        "background-dark": "#1e211c", // Deep Charcoal Green
+                        "card-dark": "#2d302c", // Slightly lighter charcoal
+                        "text-light": "#e6e6e6", // Off-white
+                        "text-muted": "#acb6a5", // Muted green-grey
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #1e211c;
+            color: #e6e6e6;
+        }
+        h1, h2, h3, h4, h5, h6, .font-display {
+            font-family: 'Noto Serif', serif;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e211c; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #445936; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #556b47; 
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-secondary selection:text-white">
+<div class="relative min-h-screen w-full flex flex-col overflow-x-hidden">
+<!-- Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#1e211c]/95 backdrop-blur-md border-b border-[#343b30]">
+<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-8 text-secondary flex items-center justify-center rounded-full bg-white/5 border border-white/10">
+<span class="material-symbols-outlined text-xl">security</span>
+</div>
+<span class="text-white font-display font-bold text-lg tracking-wide uppercase">Lịch sử Đổi Mới</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-text-muted hover:text-white text-sm font-medium transition-colors" href="#">Trang chủ</a>
+<a class="text-text-muted hover:text-white text-sm font-medium transition-colors" href="#">Kinh tế</a>
+<a class="text-text-muted hover:text-white text-sm font-medium transition-colors" href="#">Xã hội</a>
+<a class="text-white font-bold border-b-2 border-primary pb-1 text-sm font-medium transition-colors" href="#">Quốc phòng - An ninh</a>
+<a class="text-text-muted hover:text-white text-sm font-medium transition-colors" href="#">Đối ngoại</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-text-muted hover:text-white transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="md:hidden text-text-muted hover:text-white transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 px-6 min-h-[60vh] flex items-center justify-center">
+<!-- Background with texture -->
+<div class="absolute inset-0 z-0 bg-background-dark">
+<div class="absolute inset-0 opacity-20" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVmAttqI1Ot2G6jWeNme7v4gUKg9EMU5vuQAvOf-wa4bd9H_5g16giyxYHAdX3x3fRa3fBvSknRTvN8xPq6sg6ljg16fSf1_EydInHmcaFq52q1O9IDimdDLMmltcRZtqpr3wzRZ6uGn_3vLJrrZmcMdIn9bW5vTlJaFNgCx49HTmGdICCdeB0T2PvHCb4OuiMCOCx1lqxK0CHwKt6_akaJpJfanKp0wwuLVw8i58GqUabbfbuYD56i4QZwE2jDmsoo5qXTJWRWGc');"></div>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-b from-[#1e211c]/50 via-transparent to-[#1e211c]"></div>
+<!-- Hero Image Background -->
+<div class="absolute inset-0 opacity-30 mix-blend-overlay bg-cover bg-center" data-alt="Silhouette of soldiers against a dramatic sky representing defense" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-0RgChGWD4LEAZa-eMo0dZA37jHG05eXwLqeXNIeEX5o6bgybEMYTGFAxhGl7d920I11piJRSA-zR8OatTjakrbJJnRXhV1HikUrr0_feyiJvANFZwpKF8WNU-l9GIm59AyBekJ1-ngtSxg4r4cQ4DPM8O2peHDuBfT-SrbnLq-j5eGiBejvRih8hfbmkMVKJJrL-hgxPnrWi9TmqVjMYLt6UAx5-VDVRe6nTJHog-yX9XE1vQ8jijs5rZdQ7z90jHA5o9wWo6HM')"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-primary text-xs font-bold uppercase tracking-widest mb-6">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    Hành trình 40 năm
+                </div>
+<h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-tight mb-6">
+                    Quốc phòng - An ninh <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-[#cbb092]">Vững vàng vì Tổ quốc</span>
+</h1>
+<p class="text-lg md:text-xl text-text-muted max-w-2xl mx-auto leading-relaxed">
+                    Xây dựng nền quốc phòng toàn dân, an ninh nhân dân vững mạnh, bảo vệ vững chắc chủ quyền lãnh thổ và an ninh quốc gia trong tình hình mới.
+                </p>
+<div class="mt-10 flex flex-wrap justify-center gap-4">
+<button class="group relative px-6 py-3 bg-primary hover:bg-[#556b47] text-white rounded-lg font-bold transition-all flex items-center gap-2 shadow-[0_0_20px_-5px_rgba(68,89,54,0.5)]">
+<span>Khám phá hành trình</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-y-1 transition-transform">arrow_downward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="relative py-20 px-4 md:px-6 overflow-hidden bg-background-dark">
+<div class="max-w-6xl mx-auto relative">
+<!-- Central Timeline Line (Desktop) -->
+<div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-primary/50 to-transparent md:-translate-x-1/2"></div>
+<!-- 2014: Peacekeeping -->
+<div class="relative flex flex-col md:flex-row items-center justify-between mb-24 group">
+<!-- Timeline Dot -->
+<div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-secondary border-4 border-background-dark z-10 shadow-[0_0_0_4px_rgba(144,111,79,0.2)] mt-6 md:mt-0"></div>
+<!-- Content Card (Left) -->
+<div class="w-full md:w-[45%] pl-12 md:pl-0 md:pr-12 md:text-right order-2 md:order-1">
+<div class="text-secondary font-display font-bold text-5xl md:text-6xl mb-4 opacity-90 group-hover:scale-105 transition-transform origin-left md:origin-right duration-500">2014</div>
+<h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Sứ mệnh Gìn giữ hòa bình</h3>
+<p class="text-text-muted leading-relaxed mb-4">
+                            Việt Nam chính thức tham gia hoạt động Gìn giữ hòa bình Liên Hợp Quốc. Những chiến sĩ "mũ nồi xanh" Việt Nam bắt đầu hành trình đầy tự hào, khẳng định trách nhiệm quốc tế và vị thế của đất nước.
+                        </p>
+<div class="inline-flex items-center gap-2 text-secondary text-sm font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-lg">public</span>
+                            Vươn ra thế giới
+                        </div>
+</div>
+<!-- Visual Card (Right) -->
+<div class="w-full md:w-[45%] mt-6 md:mt-0 pl-12 md:pl-12 order-3 md:order-2">
+<div class="relative rounded-xl overflow-hidden aspect-[16/9] bg-card-dark border border-white/5 shadow-2xl group-hover:shadow-primary/10 transition-shadow duration-500">
+<img alt="Soldiers with blue helmets standing in formation" class="w-full h-full object-cover filter contrast-125 saturate-50 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXGIiYz9eAEJWR_1FYcMUYX1twDRoxG5fxk9BRqGf3-vig4VYO4hOZqXBBPHKCRf7VG9KQyUV2dVW0n_qElM1mYZqe-eDdVdjla0LEWtgciD-GUx-kdENk5yZSmFekX6wYp-OU7wwN0XrzrozHXURKQsWkIJ0VAFAXKX6x2UHYBJO_0hz8z16mZ1eK8YYZDkrCIT5PgrpipqEFejj-9fqgQV0S0-zZs-79C1TYGLz-N4Sv4sjInKS3c71JXnoy8vt1iigy3xQ-Wgk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+</div>
+</div>
+</div>
+<!-- 2016: Sovereignty -->
+<div class="relative flex flex-col md:flex-row-reverse items-center justify-between mb-24 group">
+<!-- Timeline Dot -->
+<div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-secondary border-4 border-background-dark z-10 shadow-[0_0_0_4px_rgba(144,111,79,0.2)] mt-6 md:mt-0"></div>
+<!-- Content Card (Right) -->
+<div class="w-full md:w-[45%] pl-12 md:pr-0 md:pl-12 order-2 md:order-1">
+<div class="text-secondary font-display font-bold text-5xl md:text-6xl mb-4 opacity-90 group-hover:scale-105 transition-transform origin-left duration-500">2016</div>
+<h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Bảo vệ Tổ quốc từ xa</h3>
+<p class="text-text-muted leading-relaxed mb-4">
+                            Triển khai chiến lược bảo vệ chủ quyền biên giới, biển đảo từ sớm, từ xa. Tăng cường năng lực thực thi pháp luật trên biển và khẳng định chủ quyền quốc gia qua các hoạt động diễn tập quy mô lớn.
+                        </p>
+<div class="inline-flex items-center gap-2 text-secondary text-sm font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-lg">map</span>
+                            Chủ quyền biển đảo
+                        </div>
+</div>
+<!-- Visual Card (Left) -->
+<div class="w-full md:w-[45%] mt-6 md:mt-0 pl-12 md:pr-12 order-3 md:order-2">
+<div class="relative rounded-xl overflow-hidden aspect-[16/9] bg-card-dark border border-white/5 shadow-2xl group-hover:shadow-primary/10 transition-shadow duration-500">
+<div class="absolute inset-0 bg-[#2d302c] flex items-center justify-center">
+<img class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700" data-alt="Map of Vietnam coast with naval ship silhouette overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdV7mcmTQl_3KDq7-XxVGR6Dzm9qqcuYMIYofsdIcOlXGfjTk4MU3jXyAgmxNKUpG6UndLIMZ6uugbjojFe9OYNongLp7CMbCVDnUPWE9oAEw-MVVShC4ND6nXkWpWK_WSXkahVHfXKMSdySjUCEhOFZmTifsKaLvZVy8_Ut-F2PvFJUIEvmEXPFZ2n_6jNgonHEt_3VntyMZ_PxT5OdCAx-ENSAkIGRN4kb-03W2-zpTE6nToLJUntJ5hRsArEAYUPmHSA_h8rNM"/>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+<div class="bg-black/50 backdrop-blur-sm px-3 py-1 rounded text-xs text-white/80 border border-white/10">Biển Đông</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 2018: Cyber Security -->
+<div class="relative flex flex-col md:flex-row items-center justify-between mb-24 group">
+<div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-secondary border-4 border-background-dark z-10 shadow-[0_0_0_4px_rgba(144,111,79,0.2)] mt-6 md:mt-0"></div>
+<div class="w-full md:w-[45%] pl-12 md:pl-0 md:pr-12 md:text-right order-2 md:order-1">
+<div class="text-secondary font-display font-bold text-5xl md:text-6xl mb-4 opacity-90 group-hover:scale-105 transition-transform origin-left md:origin-right duration-500">2018</div>
+<h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Tác chiến không gian mạng</h3>
+<p class="text-text-muted leading-relaxed mb-4">
+                            Thành lập <strong>Bộ Tư lệnh Tác chiến không gian mạng</strong> (Bộ Tư lệnh 86), đánh dấu bước ngoặt trong việc bảo vệ chủ quyền quốc gia trên không gian ảo, sẵn sàng đối phó với chiến tranh công nghệ cao.
+                        </p>
+<div class="inline-flex items-center gap-2 text-secondary text-sm font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-lg">security</span>
+                            An ninh mạng
+                        </div>
+</div>
+<div class="w-full md:w-[45%] mt-6 md:mt-0 pl-12 md:pl-12 order-3 md:order-2">
+<div class="relative rounded-xl overflow-hidden aspect-[16/9] bg-card-dark border border-white/5 shadow-2xl group-hover:shadow-primary/10 transition-shadow duration-500">
+<div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-black">
+<span class="material-symbols-outlined text-9xl text-primary/30 absolute animate-pulse">shield</span>
+<div class="relative z-10 grid grid-cols-6 gap-2 opacity-30">
+<div class="h-12 w-12 border border-primary/40 rounded bg-primary/10"></div>
+<div class="h-12 w-12 border border-primary/40 rounded bg-primary/10"></div>
+<div class="h-12 w-12 border border-primary/40 rounded bg-primary/10"></div>
+<div class="h-12 w-12 border border-primary/40 rounded bg-primary/10"></div>
+</div>
+</div>
+<img class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50" data-alt="Abstract visualization of digital shield and binary code" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9-gemrUwj8oR26u9eNovrSx98IW3fiA04YSL6ezVWHiAU34YokwZtj56Bj0hML1XcSd0uLt4fV9YLOtm7wzfaFUKP4hzDjcWcfB3G8Eze1kG6f1bYPXHC4Iffmyro-tv8I7vB2i0IKi4-mblDW0RAB0YUEdbSCIq-W85AG0NbYzvAnupL3t82Uc1qW3kgO_yJy1noHIlu5VFxrBSP4bqgbgWTj7UNwSYo9avyVSbiHKpGPwJY6wW77rMbsWeVWCKX3n9viNLOB9A"/>
+</div>
+</div>
+</div>
+<!-- 2019: 4 No's Policy -->
+<div class="relative flex flex-col md:flex-row-reverse items-center justify-between mb-24 group">
+<div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-secondary border-4 border-background-dark z-10 shadow-[0_0_0_4px_rgba(144,111,79,0.2)] mt-6 md:mt-0"></div>
+<div class="w-full md:w-[45%] pl-12 md:pr-0 md:pl-12 order-2 md:order-1">
+<div class="text-secondary font-display font-bold text-5xl md:text-6xl mb-4 opacity-90 group-hover:scale-105 transition-transform origin-left duration-500">2019</div>
+<h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Quốc phòng 'Bốn không'</h3>
+<p class="text-text-muted leading-relaxed mb-4">
+                            Công bố Sách trắng Quốc phòng Việt Nam, khẳng định chính sách hòa bình, tự vệ với chủ trương "Bốn không": Không tham gia liên minh quân sự; không liên kết nước này chống nước kia; không cho nước ngoài đặt căn cứ quân sự; không sử dụng vũ lực.
+                        </p>
+<div class="inline-flex items-center gap-2 text-secondary text-sm font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-lg">history_edu</span>
+                            Sách trắng Quốc phòng
+                        </div>
+</div>
+<div class="w-full md:w-[45%] mt-6 md:mt-0 pl-12 md:pr-12 order-3 md:order-2">
+<div class="relative rounded-xl overflow-hidden aspect-[16/9] bg-card-dark border border-white/5 shadow-2xl group-hover:shadow-primary/10 transition-shadow duration-500 group">
+<div class="absolute inset-0 bg-gradient-to-r from-[#2d302c] to-[#1e211c]">
+<img class="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Stylized dove of peace flying over modern military vehicles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVoEOdNzIG317VCACWxQS3jyowmEMBRp-809dc2jH9HENnHS054a5oYLYYyfmt483X4yw4a7wln0J-JFoUyM--21sLnvRwo9_445Yr2yVe1Xgdx7pA5cpLfl3Yhu0kuW-0SgtLIDhWNDxMAhpFG-YZTAl56uTNz_OVraFoq7V_1g41tOxAWslTW4K721fWTdgrdpmEdSQyZ3Wz2N33zpnpvdvKnaVeMqlYxpGH6Ps3nxX3iWe5NrK4IPq0YmxRRR3bJv_gvZ1-UM4"/>
+</div>
+<!-- Overlay Icon -->
+<div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md p-2 rounded-lg border border-white/10">
+<span class="material-symbols-outlined text-white">menu_book</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 2020: COVID-19 -->
+<div class="relative flex flex-col md:flex-row items-center justify-between mb-24 group">
+<div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-secondary border-4 border-background-dark z-10 shadow-[0_0_0_4px_rgba(144,111,79,0.2)] mt-6 md:mt-0"></div>
+<div class="w-full md:w-[45%] pl-12 md:pl-0 md:pr-12 md:text-right order-2 md:order-1">
+<div class="text-secondary font-display font-bold text-5xl md:text-6xl mb-4 opacity-90 group-hover:scale-105 transition-transform origin-left md:origin-right duration-500">2020</div>
+<h3 class="text-2xl md:text-3xl font-bold text-white mb-3">An ninh phi truyền thống</h3>
+<p class="text-text-muted leading-relaxed mb-4">
+                            Quân đội và Công an trở thành lực lượng nòng cốt trên tuyến đầu chống dịch COVID-19. Hình ảnh "anh bộ đội Cụ Hồ" đi chợ giúp dân, trực chốt biên giới đã trở thành biểu tượng của tình quân dân trong thời bình.
+                        </p>
+<div class="inline-flex items-center gap-2 text-secondary text-sm font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-lg">medical_services</span>
+                            Chống dịch như chống giặc
+                        </div>
+</div>
+<div class="w-full md:w-[45%] mt-6 md:mt-0 pl-12 md:pl-12 order-3 md:order-2">
+<div class="relative rounded-xl overflow-hidden aspect-[16/9] bg-card-dark border border-white/5 shadow-2xl group-hover:shadow-primary/10 transition-shadow duration-500">
+<img class="w-full h-full object-cover filter sepia-[0.3] contrast-125 group-hover:scale-105 transition-transform duration-700" data-alt="Military personnel wearing medical masks distributing food supplies" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKJYp9QSlo7IeNWcefOE8GmsAIXiuuIe2Mb3gX4iMZsPCzYw9i0S61ny6r8zkOvcrlLTxXY8I9o2awZYlHYGB3LGmFX0bboefxMPcPDX3s_uCyAG1DdXzKdnHaESXuJl-11AAWewVStGpZ-pObXCxyXChuR5wHDxmOoD-9weAdbMtw1xJciQE0tfC9X5cEkMYG2vuXDjwo82OSMyB-WmGb65ZVFVJyUONpMVVojLHWvoSlVZILEjzMQLSxC1CmipPKYIX2dq3GbbQ"/>
+<div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+</div>
+</div>
+</div>
+<!-- 2021: Elite Forces -->
+<div class="relative flex flex-col md:flex-row-reverse items-center justify-between mb-24 group">
+<div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-secondary border-4 border-background-dark z-10 shadow-[0_0_0_4px_rgba(144,111,79,0.2)] mt-6 md:mt-0"></div>
+<div class="w-full md:w-[45%] pl-12 md:pr-0 md:pl-12 order-2 md:order-1">
+<div class="text-secondary font-display font-bold text-5xl md:text-6xl mb-4 opacity-90 group-hover:scale-105 transition-transform origin-left duration-500">2021</div>
+<h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Tinh nhuệ, Hiện đại</h3>
+<p class="text-text-muted leading-relaxed mb-4">
+                            Đại hội XIII xác định mục tiêu xây dựng Quân đội, Công an cách mạng, chính quy, tinh nhuệ, từng bước hiện đại. Ưu tiên hiện đại hóa một số quân chủng, binh chủng, lực lượng then chốt.
+                        </p>
+<div class="inline-flex items-center gap-2 text-secondary text-sm font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-lg">military_tech</span>
+                            Sức mạnh quốc phòng
+                        </div>
+</div>
+<div class="w-full md:w-[45%] mt-6 md:mt-0 pl-12 md:pr-12 order-3 md:order-2">
+<div class="relative rounded-xl overflow-hidden aspect-[16/9] bg-card-dark border border-white/5 shadow-2xl group-hover:shadow-primary/10 transition-shadow duration-500">
+<img class="w-full h-full object-cover filter contrast-125 saturate-50 group-hover:scale-105 transition-transform duration-700" data-alt="Soldiers in dress uniform marching in perfect unison" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ3KyITt4SrrqpAoxuzoPQSH6E3cojA82IXtEGG2w08ziW_qX1p5Wbro-vCkJ67wf5bXY3Y85JwZdRfSQXWqalzo1wcRYDodnG2fBVJD-W8X1oCqEh6gc2KNQJv4yoTfXjDLnr_akLEDJUP9h58NnVZE_rckH06QMl5r1ZWiLk2h6BVXn9JTjxeoAchT_sGBa7BV-dhfnc1eWURyhhAvF9uKcEQ4mF1g2lrFfmBbeO_fEf8AzjMQx8kYlIEMTj_N2LGDO7Lkn7S7w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+</div>
+</div>
+<!-- Nay: Digital Sovereignty -->
+<div class="relative flex flex-col md:flex-row items-center justify-between mb-10 group">
+<div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-6 h-6 rounded-full bg-accent border-4 border-background-dark z-10 shadow-[0_0_0_4px_rgba(153,38,48,0.3)] animate-pulse mt-6 md:mt-0"></div>
+<div class="w-full md:w-[45%] pl-12 md:pl-0 md:pr-12 md:text-right order-2 md:order-1">
+<div class="text-accent font-display font-bold text-5xl md:text-6xl mb-4 opacity-90">Nay</div>
+<h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Chủ quyền số quốc gia</h3>
+<p class="text-text-muted leading-relaxed mb-4">
+                            Trong kỷ nguyên chuyển đổi số, bảo vệ chủ quyền quốc gia trên không gian mạng là nhiệm vụ sống còn. Việt Nam xây dựng thế trận an ninh nhân dân trên không gian mạng, bảo vệ dữ liệu và hạ tầng số quốc gia.
+                        </p>
+<div class="inline-flex items-center gap-2 text-accent text-sm font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-lg">vpn_key</span>
+                            An ninh tương lai
+                        </div>
+</div>
+<div class="w-full md:w-[45%] mt-6 md:mt-0 pl-12 md:pl-12 order-3 md:order-2">
+<div class="relative rounded-xl overflow-hidden aspect-[16/9] bg-card-dark border border-accent/20 shadow-2xl shadow-accent/5 group-hover:shadow-accent/20 transition-shadow duration-500">
+<div class="absolute inset-0 bg-black">
+<img class="w-full h-full object-cover opacity-60" data-alt="Futuristic digital interface overlaying a stylized map representing data sovereignty" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ1IGRTdCxq_kchh1UypjVBAYF7zIsZh6cQAbjE-WNv6HCHEHls4to7QP2xOWmngzQfa8NxHpbigpnP612_0aAmqVryEiWQSvFAbOxbUk1ONW1epJLhDzdVKxeoq_tCZLRYZPxJDiycDge2Ui75piS4-YpTGmymZC6U2F4yO9pkagRmiJXClwuXS2nDeWlLy-WriTJJHDqBIn9E8vUklMIdXv-6JSo3kfCSjNdf7pqTgCTkNs6z9H5NIjKdzIx3BdXl44SGwZqGlM"/>
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diag-diamonds-light.png')] opacity-20"></div>
+</div>
+<div class="absolute bottom-4 left-4">
+<div class="flex items-center gap-2 text-accent text-xs font-mono bg-black/80 px-2 py-1 rounded border border-accent/30">
+<span class="w-2 h-2 rounded-full bg-accent animate-ping"></span>
+                                    SYSTEM SECURE
+                                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#151713] border-t border-[#343b30] py-12 px-6">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3">
+<div class="size-10 text-secondary flex items-center justify-center rounded-full bg-white/5 border border-white/10">
+<span class="material-symbols-outlined text-2xl">star</span>
+</div>
+<div>
+<h4 class="text-white font-display font-bold text-lg">40 Năm Đổi Mới</h4>
+<p class="text-text-muted text-sm">Tự hào Việt Nam vươn mình</p>
+</div>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-text-muted hover:text-white transition-colors text-sm" href="#">Chính sách bảo mật</a>
+<a class="text-text-muted hover:text-white transition-colors text-sm" href="#">Điều khoản sử dụng</a>
+<a class="text-text-muted hover:text-white transition-colors text-sm" href="#">Liên hệ</a>
+</div>
+<div class="text-text-muted text-sm text-center md:text-right">
+                    © 2024 Cổng thông tin Lịch sử Đổi Mới.<br/>Bản quyền nội dung được bảo lưu.
+                </div>
+</div>
+</footer>
+</div>
+</body></html>
