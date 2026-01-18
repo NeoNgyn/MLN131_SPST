@@ -3,7 +3,6 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lịch Sử Việt Nam: Thử Thách Vịt Vàng - Chơi</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
         * {
             margin: 0;
@@ -11,7 +10,7 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Fredoka', sans-serif;
+            font-family: Arial, sans-serif;
             width: 100vw;
             height: 100vh;
             overflow: hidden;
@@ -476,13 +475,13 @@
                 }
             });
             
-            // Navigate to end.html after the winner finishes (plus animation time 800ms)
+            // Navigate to end.html after the winner finishes (plus animation time 800ms + 3000ms for reading)
             setTimeout(() => {
                 if (!winnerDetected) {
                     winnerDetected = true;
                     window.location.href = `end.html?winner=${fastestYear.number}&year=${fastestYear.year}`;
                 }
-            }, fastestYear.duration + 800);
+            }, fastestYear.duration + 800 + 3000);
         }
     </script>
 
