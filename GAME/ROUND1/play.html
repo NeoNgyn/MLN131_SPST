@@ -3,7 +3,6 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lịch Sử Việt Nam: Thử Thách Vịt Vàng - Chơi</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
         * {
             margin: 0;
@@ -11,7 +10,7 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Fredoka', sans-serif;
+            font-family: Arial, sans-serif;
             width: 100vw;
             height: 100vh;
             overflow: hidden;
@@ -187,16 +186,16 @@
             animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 7.5s ease-in-out forwards;
         }
         .duck-wrapper:nth-child(3).move {
-            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 8s ease-in-out forwards;
+            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 7.1s ease-in-out forwards;
         }
         .duck-wrapper:nth-child(4).move {
-            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 8s ease-in-out forwards;
+            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 7.3s ease-in-out forwards;
         }
         .duck-wrapper:nth-child(5).move {
-            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 9s ease-in-out forwards;
+            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 7.6s ease-in-out forwards;
         }
         .duck-wrapper:nth-child(6).move {
-            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 9.5s ease-in-out forwards;
+            animation: duck-slide-in 0.8s ease forwards, duck-move-horizontal 7.4s ease-in-out forwards;
         }
         @keyframes duck-slide-in {
             to {
@@ -405,12 +404,12 @@
     <script>
         // Duck data matching the HTML
         const duckData = [
-            { number: 1, year: '1988', duration: 9000 },
-            { number: 2, year: '1992', duration: 7000 },
-            { number: 3, year: '1995', duration: 6000 },
-            { number: 4, year: '1998', duration: 8000 },
-            { number: 5, year: '1997', duration: 9500 },
-            { number: 6, year: '1986', duration: 10000 }
+            { number: 1, year: '1995', duration: 7000 },
+            { number: 2, year: '1997', duration: 7500 },
+            { number: 3, year: '1988', duration: 7100 },
+            { number: 4, year: '1986', duration: 7300 },
+            { number: 5, year: '1992', duration: 7600 },
+            { number: 6, year: '1998', duration: 7400 }
         ];
 
         let raceStarted = false;
@@ -485,7 +484,8 @@
         }
     </script>
 
-    <!-- Audio element for whistle sound -->
+    <!-- Audio elements -->
     <audio id="whistleSound" src="../media/Whistle-sound.mp3" preload="auto"></audio>
+    <audio id="backgroundMusic" src="../media/play.mp3" loop autoplay preload="auto"></audio>
 
 </body></html>

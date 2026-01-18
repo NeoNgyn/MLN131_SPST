@@ -3,7 +3,6 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lịch Sử Việt Nam: Thử Thách Vịt Vàng</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
 <style>
         * {
@@ -12,7 +11,7 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Fredoka', sans-serif;
+            font-family: Arial, sans-serif;
             width: 100vw;
             height: 100vh;
             overflow: hidden;
@@ -397,8 +396,9 @@
         <span id="btnText">CHUẨN BỊ CÂU HỎI</span>
     </button>
 
-    <!-- Audio element for button sound -->
+    <!-- Audio elements -->
     <audio id="buttonSound" src="../media/button.mp3" preload="auto"></audio>
+    <audio id="backgroundMusic" src="../media/start.mp3" loop autoplay preload="auto"></audio>
 
     <script>
         let gameState = 'prepare'; // 'prepare' or 'ready'
@@ -421,12 +421,11 @@
                 positions.push({ left: rect.left, top: rect.top });
             });
             
-            // Different shuffle pairs for each round
+            // Different shuffle pairs for each round - designed so 2021 ends at position 5 (duck 6)
             const allShufflePairs = [
-                [[0, 2], [1, 4], [3, 5]],  // Round 1
-                [[0, 5], [1, 3], [2, 4]],  // Round 2
-                [[0, 4], [1, 2], [3, 5]],  // Round 3
-                [[0, 3], [1, 5], [2, 4]]   // Round 4
+                [[0, 2], [1, 4], [3, 5]],  // Round 1: 2021 moves from position 2 to 0
+                [[0, 3], [1, 5], [2, 4]],  // Round 2: 2021 moves from position 0 to 3
+                [[1, 2], [3, 5], [0, 4]]   // Round 3: 2021 moves from position 3 to 5 (duck 6)
             ];
             
             const shufflePairs = allShufflePairs[round % allShufflePairs.length];
@@ -486,7 +485,7 @@
         function shuffleYears() {
             // Perform multiple shuffle rounds
             let round = 0;
-            const totalRounds = 4;
+            const totalRounds = 3;  // Changed from 4 to 3 rounds
             
             function doNextRound() {
                 if (round < totalRounds) {
@@ -495,12 +494,12 @@
                         setTimeout(doNextRound, 100);
                     });
                 } else {
-                    // All shuffles done, now hide bubbles
+                    // All shuffles done, now hide bubbles after 3 seconds for reading
                     setTimeout(() => {
                         document.querySelectorAll('.year-bubble').forEach(bubble => {
                             bubble.classList.add('hidden');
                         });
-                    }, 300);
+                    }, 3300);
                 }
             }
             
@@ -542,7 +541,7 @@
                                     playIcon.textContent = 'play_arrow';
                                     gameState = 'ready';
                                     btn.style.pointerEvents = 'auto';
-                                }, 3200); // 4 rounds * 700ms + buffer
+                                }, 2400); // 3 rounds * 700ms + buffer
                             }, 1000);
                         }
                     }, 800 + (index * 600)); // 800ms after question panel, then 600ms between each duck

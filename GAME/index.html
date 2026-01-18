@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thử Thách Vịt Vàng - Lịch Sử Việt Nam</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <style>
         * {
@@ -13,7 +12,7 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Fredoka', sans-serif;
+            font-family: Arial, sans-serif;
             width: 100vw;
             height: 100vh;
             overflow: hidden;
@@ -397,9 +396,9 @@
     <!-- Main content -->
     <div class="main-container">
         <div class="title-section">
-            <h1 class="main-title">Chương 3</h1>
-            <h2 class="subtitle">Chủ nghĩa xã hội và thời kỳ quá độ lên CNXH</h2>
-            <p class="description">Thành tựu xây dựng CNXH ở Việt Nam<br>sau gần 40 năm Đổi mới</p>
+            <h1 class="main-title">Cuộc đua Vịt Vàng</h1>
+            <!-- <h2 class="subtitle">Chủ nghĩa xã hội và thời kỳ quá độ lên CNXH</h2>
+            <p class="description">Thành tựu xây dựng CNXH ở Việt Nam<br>sau gần 40 năm Đổi mới</p> -->
         </div>
 
         <div class="duck-decoration">
@@ -440,24 +439,22 @@
                 <h3><span class="material-icons-round">videogame_asset</span>Cách chơi</h3>
                 <ul>
                     <li><strong>Bước 1:</strong> Đọc kỹ câu hỏi về các sự kiện lịch sử Việt Nam</li>
-                    <li><strong>Bước 2:</strong> Quan sát 6 con vịt, mỗi con mang một đáp án (năm hoặc thông tin khác)</li>
-                    <li><strong>Bước 3 (Round 1 & 2):</strong> Các đáp án sẽ được xáo trộn, hãy nhớ vị trí đáp án đúng!</li>
-                    <li><strong>Bước 3 (Round 3):</strong> Các đáp án hiển thị cố định, không xáo trộn</li>
-                    <li><strong>Bước 4:</strong> Nhấn "BẮT ĐẦU" để bắt đầu cuộc đua</li>
-                    <li><strong>Bước 5:</strong> Con vịt có đáp án đúng sẽ <span class="highlight">chạy nhanh nhất</span> và về đích trước!</li>
+                    <li><strong>Bước 2:</strong> Quan sát 6 con vịt, mỗi con mang một đáp án</li>
+                    <li><strong>Bước 3:</strong> Nhấn "BẮT ĐẦU" để bắt đầu cuộc đua</li>
+                    <li><strong>Bước 4:</strong> Con vịt có đáp án đúng sẽ <span class="highlight">chạy nhanh nhất</span> và về đích trước!</li>
                 </ul>
 
                 <h3><span class="material-icons-round">emoji_events</span>Chiến thắng</h3>
                 <p>
                     Con vịt về đích đầu tiên chính là <strong>đáp án đúng</strong> của câu hỏi. 
-                    Trò chơi có <span class="highlight">3 vòng chơi</span>, mỗi vòng là một câu hỏi khác nhau về lịch sử Việt Nam.
+                    Trò chơi có <span class="highlight">5 vòng chơi</span>, mỗi vòng là một câu hỏi khác nhau về lịch sử Việt Nam.
                 </p>
 
                 <h3><span class="material-icons-round">lightbulb</span>Mẹo nhỏ</h3>
                 <ul>
-                    <li>Tập trung quan sát khi các đáp án bị xáo trộn (Round 1 & 2)</li>
                     <li>Ghi nhớ kiến thức lịch sử để dự đoán đáp án đúng</li>
-                    <li>Đọc kỹ câu hỏi và suy nghĩ trước khi bắt đầu</li>
+                    <li>Đọc kỹ câu hỏi và suy nghĩ kỹ trước khi bắt đầu</li>
+                    <li>Tập trung quan sát trong suốt cuộc đua</li>
                 </ul>
 
                 <p style="margin-top: 30px; text-align: center; font-size: 24px; font-weight: 700; color: #22c55e;">
@@ -467,8 +464,9 @@
         </div>
     </div>
 
-    <!-- Audio element for button sound -->
+    <!-- Audio elements -->
     <audio id="buttonSound" src="media/button.mp3" preload="auto"></audio>
+    <audio id="backgroundMusic" src="media/home_song.mp3" loop autoplay preload="auto"></audio>
 
     <script>
         // Function to play button sound
