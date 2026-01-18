@@ -4,13 +4,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Đối ngoại - Hội nhập: Vươn tầm vị thế toàn cầu</title>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Noto+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
@@ -19,16 +14,14 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#134171", // World Blue
-                        "accent-red": "#B02A3C", // Flag Red
-                        "accent-gold": "#C9A961", // Luxury Gold
-                        "background-light": "#faf6f0",
-                        "background-dark": "#121921",
-                        "card-dark": "#1c2631",
+                        "primary": "#ab2b38",
+                        "background-dark": "#0a0a0a",
+                        "card-dark": "#161616",
+                        "accent-gold": "#c5a059",
                     },
                     fontFamily: {
                         "display": ["Noto Serif", "serif"],
-                        "body": ["Manrope", "sans-serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
                     },
                     borderRadius: {
                         "DEFAULT": "0.25rem",
@@ -55,41 +48,52 @@
         }
     </style>
 </head>
-<body class="bg-background-dark text-white overflow-x-hidden relative">
-<!-- Top Navigation -->
-<header class="sticky top-0 z-50 w-full bg-[#121921]/95 backdrop-blur-md border-b border-[#273545]">
-<div class="px-4 lg:px-40 flex justify-center py-3">
-<div class="flex flex-col w-full max-w-[1200px]">
-<div class="flex items-center justify-between whitespace-nowrap">
-<div class="flex items-center gap-4 lg:gap-8">
-<div class="flex items-center gap-3 text-white">
-<div class="size-8 text-accent-red">
-<span class="material-symbols-outlined text-3xl">flag</span>
+<body class="bg-background-dark text-gray-200">
+<div class="flex min-h-screen">
+<aside class="w-72 bg-[#050505] border-r border-accent-gold/10 sticky top-0 h-screen overflow-y-auto hidden lg:flex flex-col">
+<div class="p-8 border-b border-accent-gold/10">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-12 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-icons-round text-3xl">history_edu</span>
 </div>
-<h2 class="text-white text-lg lg:text-xl font-bold font-display tracking-tight hidden sm:block">Lịch sử Đổi mới - 40 Năm</h2>
+<div>
+<h2 class="text-primary font-bold text-lg leading-tight font-display">Hành Trình</h2>
+<p class="text-xs uppercase tracking-widest text-accent-gold font-bold">Đổi Mới</p>
 </div>
-<nav class="hidden md:flex items-center gap-6 lg:gap-8">
-<a class="text-[#97adc4] hover:text-accent-gold text-sm font-medium transition-colors" href="#">Trang chủ</a>
-<a class="text-[#97adc4] hover:text-accent-gold text-sm font-medium transition-colors" href="#">Kinh tế</a>
-<a class="text-[#97adc4] hover:text-accent-gold text-sm font-medium transition-colors" href="#">Xã hội</a>
-<a class="text-white text-sm font-medium border-b-2 border-accent-gold pb-0.5" href="#">Đối ngoại</a>
-<a class="text-[#97adc4] hover:text-accent-gold text-sm font-medium transition-colors" href="#">Văn hóa</a>
+</div>
+</div>
+<nav class="flex-1 p-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors text-gray-400" href="context.html">
+<span class="material-icons-round">auto_stories</span>
+<span class="text-sm">Bối cảnh Lịch sử</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors text-gray-400" href="#kinhte">
+<span class="material-icons-round">trending_up</span>
+<span class="text-sm">Trụ cột Kinh tế</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors text-gray-400" href="#xahoi">
+<span class="material-icons-round">groups</span>
+<span class="text-sm">Phát triển Xã hội</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors text-gray-400" href="#chinhtri">
+<span class="material-icons-round">gavel</span>
+<span class="text-sm">Hệ thống Chính trị</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors text-gray-400" href="#quocphong">
+<span class="material-icons-round">shield</span>
+<span class="text-sm">Quốc phòng &amp; An ninh</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary font-bold" href="doingoai.html">
+<span class="material-icons-round">public</span>
+<span class="text-sm">Hội nhập Đối ngoại</span>
+</a>
 </nav>
+<div class="p-6 text-center">
+<p class="text-[10px] text-gray-500 uppercase tracking-widest">© 2024 - Hành Trình Đổi Mới</p>
 </div>
-<div class="flex items-center gap-4">
-<div class="hidden sm:flex items-center bg-[#273545] rounded-full px-3 py-1.5 border border-[#374b61] focus-within:border-accent-gold transition-colors">
-<span class="material-symbols-outlined text-[#97adc4] text-[20px]">search</span>
-<input class="bg-transparent border-none text-white text-sm focus:ring-0 placeholder:text-[#6b7c8f] w-32 lg:w-48" placeholder="Tìm kiếm sự kiện..."/>
-</div>
-<button class="bg-accent-gold/20 hover:bg-accent-gold/30 text-accent-gold rounded-full p-2 transition-colors md:hidden">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</header>
-<main class="flex flex-col items-center w-full min-h-screen pb-20">
+</aside>
+<main class="flex-1 overflow-x-hidden">
+<div class="flex flex-col items-center w-full min-h-screen pb-20">
 <!-- Hero Section -->
 <section class="w-full relative flex flex-col items-center justify-center min-h-[500px] lg:min-h-[600px] overflow-hidden">
 <!-- Background Image with Overlay -->
@@ -126,7 +130,7 @@
 <h3 class="text-4xl font-display font-bold text-accent-red mb-2">1995</h3>
 <h4 class="text-xl font-bold text-accent-gold mb-3">Việt Nam gia nhập ASEAN</h4>
 <p class="text-gray-400 text-sm leading-relaxed">
-                                Cột mốc phá thế bao vây cấm vận, đánh dấu sự hội nhập khu vực toàn diện, mở ra kỷ nguyên mới trong quan hệ đối ngoại đa phương của Việt Nam với các nước Đông Nam Á.
+                                Mở hội nhập khu vực, mở rộng không gian đối ngoại, kinh tế và an ninh.
                             </p>
 </div>
 </div>
@@ -155,7 +159,7 @@
 <h3 class="text-4xl font-display font-bold text-accent-red mb-2">2007</h3>
 <h4 class="text-xl font-bold text-accent-gold mb-3">Chính thức gia nhập WTO</h4>
 <p class="text-gray-400 text-sm leading-relaxed">
-                                Trở thành thành viên thứ 150 của Tổ chức Thương mại Thế giới (WTO). Sự kiện mở toang cánh cửa hội nhập kinh tế toàn cầu, thúc đẩy cải cách thể chế và tăng trưởng vượt bậc.
+                                Hội nhập thương mại toàn cầu sâu, gắn cải cách thể chế và thị trường.
                             </p>
 </div>
 </div>
@@ -172,7 +176,7 @@
 <h3 class="text-3xl font-display font-bold text-accent-red mb-1">2019</h3>
 <h4 class="text-lg font-bold text-white mb-2">Hiệp định CPTPP</h4>
 <p class="text-gray-400 text-sm">
-                                Tham gia Hiệp định Đối tác Toàn diện và Tiến bộ xuyên Thái Bình Dương, khẳng định cam kết mở cửa thị trường tiêu chuẩn cao.
+                                FTA tiêu chuẩn cao, thúc đẩy cải cách và đa dạng hóa thị trường.
                             </p>
 </div>
 </div>
@@ -184,9 +188,9 @@
 </div>
 <div class="p-6">
 <h3 class="text-3xl font-display font-bold text-accent-red mb-1">2020</h3>
-<h4 class="text-lg font-bold text-white mb-2">EVFTA &amp; RCEP</h4>
+<h4 class="text-lg font-bold text-white mb-2">EVFTA</h4>
 <p class="text-gray-400 text-sm">
-                                Ký kết Hiệp định thương mại tự do với EU (EVFTA) và Đối tác Kinh tế Toàn diện Khu vực (RCEP), tạo cú hích thương mại thế hệ mới.
+                                 Mở sâu thị trường EU, gắn thương mại với phát triển bền vững.
                             </p>
 </div>
 </div>
@@ -204,7 +208,7 @@
 <h2 class="text-5xl font-display font-black text-white mb-2 tracking-tight">2020</h2>
 <h3 class="text-3xl font-display font-bold text-accent-gold mb-6">Vị thế kép: Bản lĩnh Việt Nam</h3>
 <p class="text-gray-200 text-lg leading-relaxed mb-6 border-l-4 border-accent-gold pl-4">
-                                Năm 2020, Việt Nam đảm nhận thành công trọng trách kép chưa từng có: <strong class="text-white">Ủy viên không thường trực Hội đồng Bảo an Liên Hợp Quốc</strong> (nhiệm kỳ 2020-2021) và <strong class="text-white">Chủ tịch luân phiên ASEAN</strong>.
+                                Trong bối cảnh đại dịch COVID-19 và thiên tai, Việt Nam đã hoàn thành xuất sắc cùng lúc 3 vai trò: Ủy viên không thường trực Hội đồng Bảo an LHQ, Chủ tịch ASEAN và Chủ tịch AIPA. Điều này khẳng định bản lĩnh và uy tín của đất nước.
                             </p>
 <div class="flex gap-4">
 <div class="flex items-center gap-2 text-sm text-blue-200 bg-black/20 px-3 py-2 rounded-lg backdrop-blur-sm border border-white/10">
@@ -233,9 +237,9 @@
 <div class="flex-1 w-full lg:text-right order-2 lg:order-1">
 <div class="bg-card-dark border border-[#273545] p-6 rounded-xl hover:border-accent-gold/50 transition-all duration-300 shadow-lg group-hover:shadow-[0_10px_30px_-10px_rgba(20,25,30,0.5)]">
 <h3 class="text-4xl font-display font-bold text-accent-red mb-2">2022</h3>
-<h4 class="text-xl font-bold text-accent-gold mb-3">Phục hồi &amp; Hội nhập sâu rộng</h4>
+<h4 class="text-xl font-bold text-accent-gold mb-3">RCEP</h4>
 <p class="text-gray-400 text-sm leading-relaxed">
-                                Việt Nam đẩy mạnh các hoạt động đối ngoại cấp cao, bình thường hóa hoàn toàn du lịch và giao thương quốc tế. Khẳng định năng lực phục hồi mạnh mẽ sau đại dịch COVID-19.
+                                Tăng liên kết chuỗi cung ứng và thuận lợi hóa thương mại khu vực.
                             </p>
 </div>
 </div>
@@ -249,30 +253,8 @@
 </div>
 </div>
 </div>
-<!-- End Marker -->
-<div class="flex justify-center mt-8">
-<div class="bg-card-dark border border-accent-gold text-accent-gold px-6 py-2 rounded-full text-sm font-medium tracking-wide shadow-lg cursor-pointer hover:bg-accent-gold hover:text-white transition-colors">
-                    Tiếp tục hành trình
-                </div>
-</div>
+
 </div>
 </main>
-<footer class="bg-[#0f151c] border-t border-[#273545] py-12 px-4">
-<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-<div class="flex items-center gap-3">
-<div class="size-6 text-accent-red">
-<span class="material-symbols-outlined">flag</span>
 </div>
-<span class="text-white font-display font-bold">Lịch sử Đổi mới</span>
-</div>
-<p class="text-[#6b7c8f] text-sm text-center">
-                © 2024 Dự án Giáo dục Lịch sử Việt Nam. <br class="hidden sm:block"/>Nội dung phục vụ mục đích học tập và nghiên cứu.
-            </p>
-<div class="flex gap-4">
-<a class="text-[#6b7c8f] hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
-<a class="text-[#6b7c8f] hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
-<a class="text-[#6b7c8f] hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
-</div>
-</div>
-</footer>
 </body></html>
