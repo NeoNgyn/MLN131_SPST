@@ -385,7 +385,7 @@
 
         <!-- Winner Duck -->
         <div class="winner-duck-container">
-            <div class="year-bubble" id="winnerYear">Khởi xướng công cuộc Đổi mới</div>
+            <div class="year-bubble" id="winnerYear">Khởi xướng công cuộc đổi mới</div>
             <div class="duck-image-container">
                 <img src="../media/duck.png" alt="Winner Duck" class="duck-image">
                 <div class="duck-number" id="winnerNumber">4</div>
@@ -414,7 +414,7 @@
         // Get winner info from URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         const winnerNum = urlParams.get('winner') || '4';
-        const winnerYr = urlParams.get('year') || 'Khởi xướng công cuộc Đổi mới';
+        const winnerYr = urlParams.get('year') || 'Khởi xướng công cuộc đổi mới';
 
         // Update winner display
         document.getElementById('winnerNumber').textContent = winnerNum;
